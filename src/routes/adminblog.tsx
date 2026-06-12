@@ -11,10 +11,25 @@ import { addCustomPost, deleteCustomPost, estimateReadMinutes, slugify } from "@
 
 export const Route = createFileRoute("/adminblog")({
   head: () => ({
-    meta: [{ title: "Administration blogue, AquaPure" }],
+    meta: [
+      { title: "Administration blogue, AquaPure" },
+      { name: "robots", content: "noindex, nofollow" },
+    ],
   }),
   component: AdminBlogPage,
 });
+
+function isAllowedCoverImage(value: string): boolean {
+  const trimmed = value.trim();
+  if (!trimmed) return false;
+  if (trimmed.startsWith("data:image/")) return true;
+  try {
+    const url = new URL(trimmed);
+    return url.protocol === "https:";
+  } catch {
+    return false;
+  }
+}
 
 function AdminBlogPage() {
   const { posts, refresh } = useBlogPosts();
@@ -90,6 +105,10 @@ function AdminBlogPage() {
 
     if (!coverImage.trim()) {
       setError("Ajoutez une image d'en-tête (fichier ou URL).");
+      return;
+    }
+    if (!isAllowedCoverImage(coverImage)) {
+      setError("L'image doit être un fichier local ou une URL HTTPS valide.");
       return;
     }
     if (!contentToPlainText(content)) {
@@ -185,6 +204,7 @@ function AdminBlogPage() {
                 />
                 <input
                   type="url"
+                  inputMode="url"
                   value={coverImage.startsWith("data:") ? "" : coverImage}
                   onChange={(e) => setCoverImage(e.target.value)}
                   placeholder="Ou collez une URL d'image (https://...)"

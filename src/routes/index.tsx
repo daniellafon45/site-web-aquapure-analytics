@@ -476,7 +476,7 @@ function Stats() {
       <div className="mx-auto max-w-5xl rounded-2xl border border-border bg-card px-5 py-8 sm:px-8 sm:py-10 md:px-12">
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 lg:gap-16">
           {items.map((item) => (
-            <div key={item.value} className="flex items-center gap-5 w-[240px] max-w-full">
+            <div key={item.value} className="flex w-full max-w-[280px] sm:w-[240px] items-center gap-5">
               {item.icon}
               <div className="min-w-0">
                 <div className="text-3xl font-extrabold text-navy leading-none">{item.value}</div>
@@ -638,11 +638,14 @@ function validateContactForm(form: ContactFormState): string | null {
     return "Veuillez entrer une adresse courriel valide.";
   }
   if (!form.message.trim()) return "Décrivez votre besoin.";
+  if (form.message.length > 5000) return "Le message ne peut pas dépasser 5000 caractères.";
+  if (form.email.length > 254) return "Le courriel est trop long.";
   return null;
 }
 
 function Contact() {
   const [form, setForm] = useState<ContactFormState>(emptyContactForm);
+  const [botField, setBotField] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
@@ -655,6 +658,12 @@ function Contact() {
     e.preventDefault();
     setError("");
     setSuccess(false);
+
+    if (botField.trim()) {
+      setForm(emptyContactForm);
+      setSuccess(true);
+      return;
+    }
 
     const validationError = validateContactForm(form);
     if (validationError) {
@@ -690,6 +699,15 @@ function Contact() {
           <div className="border-t lg:border-t-0 lg:border-l border-white/10 p-6 sm:p-8 lg:p-12 lg:pl-10">
             <h3 className="text-xl md:text-2xl font-bold">Décrivez votre besoin</h3>
             <form className="mt-6 space-y-4" onSubmit={handleSubmit} noValidate>
+              <label className="sr-only" aria-hidden="true">
+                Ne pas remplir
+                <input
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={botField}
+                  onChange={(e) => setBotField(e.target.value)}
+                />
+              </label>
               <div className="grid sm:grid-cols-2 gap-4">
                 <ContactField label="Prénom" name="firstName" value={form.firstName} onChange={updateField} />
                 <ContactField label="Nom" name="lastName" value={form.lastName} onChange={updateField} />

@@ -1,4 +1,4 @@
-import { isHtmlContent } from "@/lib/blog/content";
+import { isHtmlContent, sanitizeBlogHtml } from "@/lib/blog/content";
 
 type BlogContentProps = {
   content: string;
@@ -10,7 +10,7 @@ export function BlogContent({ content, className = "" }: BlogContentProps) {
     return (
       <div
         className={`blog-prose mt-10 max-w-3xl ${className}`}
-        dangerouslySetInnerHTML={{ __html: content }}
+        dangerouslySetInnerHTML={{ __html: sanitizeBlogHtml(content) }}
       />
     );
   }

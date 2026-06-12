@@ -57,3 +57,11 @@ Dans **Workers & Pages** → **Create** → connecter le dépôt GitHub :
 
 Par défaut, le formulaire utilise FormSubmit depuis le navigateur vers `contact@aquapure-analytics.com`.  
 Activez l'adresse une première fois via le courriel de confirmation FormSubmit.
+
+## Sécurité et production
+
+- En-têtes HTTP de sécurité appliqués par le worker (`X-Frame-Options`, `X-Content-Type-Options`, etc.)
+- Fichiers statiques : `public/_headers` (cache assets + en-têtes)
+- `public/robots.txt` : la page `/adminblog` est exclue de l'indexation
+- Contenu HTML du blogue assaini avant affichage (scripts et attributs dangereux retirés)
+- L'administration du blogue (`/adminblog`) est une interface locale (localStorage) : en production, protégez-la avec [Cloudflare Access](https://developers.cloudflare.com/cloudflare-one/policies/access/) ou retirez l'accès public si elle n'est pas nécessaire

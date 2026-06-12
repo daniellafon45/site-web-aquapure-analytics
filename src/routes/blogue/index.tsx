@@ -5,22 +5,14 @@ import { SiteNav } from "@/components/site/nav";
 import { Reveal } from "@/components/site/reveal";
 import { useBlogPosts } from "@/hooks/use-blog-posts";
 import type { BlogCategory } from "@/lib/blog/types";
+import { useLocale } from "@/i18n/context";
+import { PageMeta } from "@/components/site/page-meta";
 
 export const Route = createFileRoute("/blogue/")({
-  head: () => ({
-    meta: [
-      { title: "Blogue, Aquapure Analytics" },
-      {
-        name: "description",
-        content:
-          "Actualités, analyses et expertise pour les gestionnaires d'eau municipale, miniers, papetiers et agroalimentaires au Québec.",
-      },
-    ],
-  }),
   component: BloguePage,
 });
 
-const CATEGORY_COLORS: Record<BlogCategory, string> = {
+const CATEGORY_COLORS: Record<string, string> = {
   "Eaux municipales": "bg-primary/10 text-primary",
   Mine: "bg-amber-500/10 text-amber-700",
   "Pâte et papier": "bg-emerald-500/10 text-emerald-700",
@@ -29,34 +21,21 @@ const CATEGORY_COLORS: Record<BlogCategory, string> = {
   Conformité: "bg-rose-500/10 text-rose-700",
 };
 
-function formatDate(iso: string) {
-  return new Date(iso).toLocaleDateString("fr-CA", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
-
 function BloguePage() {
   const { posts } = useBlogPosts();
+  const { t, formatDate, translateCategory } = useLocale();
 
   return (
     <main className="bg-background overflow-hidden min-h-screen">
+      <PageMeta title={t.meta.blogTitle} description={t.meta.blogDescription} />
       <SiteNav active="blogue" />
 
       <section className="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 px-4 sm:px-6">
         <div className="mx-auto max-w-4xl text-center">
           <Reveal>
-            <p className="text-[11px] font-semibold tracking-[0.2em] text-muted-foreground uppercase">
-              Blogue
-            </p>
-            <h1 className="mt-4 text-4xl md:text-5xl font-extrabold text-black leading-tight">
-              Le blogue AquaPure
-            </h1>
-            <p className="mt-5 text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Actualités, analyses et retours d&apos;expérience sur la gestion de l&apos;eau en milieu
-              municipal et industriel, sans jargon inutile.
-            </p>
+            <p className="text-[11px] font-semibold tracking-[0.2em] text-muted-foreground uppercase">{t.blog.kicker}</p>
+            <h1 className="mt-4 text-4xl md:text-5xl font-extrabold text-black leading-tight">{t.blog.title}</h1>
+            <p className="mt-5 text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">{t.blog.lead}</p>
           </Reveal>
         </div>
       </section>
@@ -66,28 +45,15 @@ function BloguePage() {
           {posts.map((post, i) => (
             <Reveal key={post.id} delay={i * 80}>
               <article className="group flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-card hover-lift h-full">
-                <Link
-                  to="/blogue/$slug"
-                  params={{ slug: post.slug }}
-                  className="block relative aspect-[16/10] overflow-hidden bg-muted"
-                >
+                <Link to="/blogue/$slug" params={{ slug: post.slug }} className="block relative aspect-[16/10] overflow-hidden bg-muted">
                   {post.coverImage ? (
-                    <img
-                      src={post.coverImage}
-                      alt=""
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      loading="lazy"
-                    />
+                    <img src={post.coverImage} alt="" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
                   ) : (
-                    <div className="h-full w-full bg-gradient-to-br from-soft to-muted flex items-center justify-center text-sm text-muted-foreground">
-                      Aucune image
-                    </div>
+                    <div className="h-full w-full bg-gradient-to-br from-soft to-muted flex items-center justify-center text-sm text-muted-foreground">Aucune image</div>
                   )}
                   <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/50 to-transparent pointer-events-none" />
-                  <span
-                    className={`absolute bottom-4 left-4 rounded-full px-3 py-1 text-xs font-semibold backdrop-blur-sm ${CATEGORY_COLORS[post.category]}`}
-                  >
-                    {post.category}
+                  <span className={`absolute bottom-4 left-4 rounded-full px-3 py-1 text-xs font-semibold backdrop-blur-sm ${CATEGORY_COLORS[translateCategory(post.category)] || "bg-primary/10 text-primary"}`}>
+                    {translateCategory(post.category)}
                   </span>
                 </Link>
 
@@ -95,7 +61,7 @@ function BloguePage() {
                   <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground mb-3">
                     <span className="flex items-center gap-1">
                       <Clock className="size-3.5" />
-                      {post.readMinutes} min
+                      {post.readMinutes} {t.blog.readMinutesLabel}
                     </span>
                     <span>{formatDate(post.publishedAt)}</span>
                   </div>
@@ -104,15 +70,9 @@ function BloguePage() {
                       {post.title}
                     </Link>
                   </h2>
-                  <p className="mt-3 text-sm md:text-base text-muted-foreground leading-relaxed flex-1">
-                    {post.excerpt}
-                  </p>
-                  <Link
-                    to="/blogue/$slug"
-                    params={{ slug: post.slug }}
-                    className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:gap-2.5 transition-all"
-                  >
-                    Lire l&apos;article <ArrowRight className="size-4" />
+                  <p className="mt-3 text-sm md:text-base text-muted-foreground leading-relaxed flex-1">{post.excerpt}</p>
+                  <Link to="/blogue/$slug" params={{ slug: post.slug }} className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:gap-2.5 transition-all">
+                    {t.blog.readArticle} <ArrowRight className="size-4" />
                   </Link>
                 </div>
               </article>
@@ -123,16 +83,10 @@ function BloguePage() {
 
       <section className="px-4 sm:px-6 pb-16 sm:pb-20">
         <div className="mx-auto max-w-3xl rounded-2xl bg-navy text-navy-foreground p-8 md:p-10 text-center">
-          <h2 className="text-xl md:text-2xl font-bold">Un sujet que vous aimeriez voir ici ?</h2>
-          <p className="mt-3 text-sm text-white/75 leading-relaxed">
-            Parlons de votre réalité opérationnelle, nous vous montrons comment la donnée peut y
-            répondre, sans bouleverser ce qui fonctionne déjà.
-          </p>
-          <a
-            href="/#contact"
-            className="mt-6 inline-flex rounded-md bg-white text-navy px-5 py-2.5 text-sm font-semibold hover:bg-white/90 transition-colors"
-          >
-            Planifier une rencontre
+          <h2 className="text-xl md:text-2xl font-bold">{t.blog.suggestionTitle}</h2>
+          <p className="mt-3 text-sm text-white/75 leading-relaxed">{t.blog.suggestionLead}</p>
+          <a href="/#contact" className="mt-6 inline-flex rounded-md bg-white text-navy px-5 py-2.5 text-sm font-semibold hover:bg-white/90 transition-colors">
+            {t.blog.suggestionCta}
           </a>
         </div>
       </section>

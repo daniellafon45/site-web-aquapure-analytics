@@ -10,20 +10,20 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import { LocaleProvider, useLocale } from "../i18n/context";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
+  const { t } = useLocale();
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page introuvable</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          La page que vous cherchez n&apos;existe pas ou a été déplacée.
-        </p>
+        <h2 className="mt-4 text-xl font-semibold text-foreground">{t.meta.notFoundTitle}</h2>
+        <p className="mt-2 text-sm text-muted-foreground">{t.meta.notFoundBody}</p>
         <div className="mt-6">
           <Link to="/" className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90">
-            Retour à l&apos;accueil
+            {t.meta.backHome}
           </Link>
         </div>
       </div>
@@ -34,17 +34,18 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
+  const { t } = useLocale();
   useEffect(() => {
     reportLovableError(error, { boundary: "tanstack_root_error_component" });
   }, [error]);
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold">Cette page n&apos;a pas pu se charger</h1>
-        <p className="mt-2 text-sm text-muted-foreground">Un problème est survenu de notre côté.</p>
+        <h1 className="text-xl font-semibold">{t.meta.errorTitle}</h1>
+        <p className="mt-2 text-sm text-muted-foreground">{t.meta.errorBody}</p>
         <div className="mt-6 flex justify-center gap-2">
-          <button onClick={() => { router.invalidate(); reset(); }} className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90">Réessayer</button>
-          <a href="/" className="rounded-md border border-input bg-background px-4 py-2 text-sm font-medium hover:bg-accent">Retour à l&apos;accueil</a>
+          <button onClick={() => { router.invalidate(); reset(); }} className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90">{t.meta.retry}</button>
+          <a href="/" className="rounded-md border border-input bg-background px-4 py-2 text-sm font-medium hover:bg-accent">{t.meta.backHome}</a>
         </div>
       </div>
     </div>
@@ -80,7 +81,12 @@ function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="fr">
       <head><HeadContent /></head>
-      <body>{children}<Scripts /></body>
+      <body>
+        <LocaleProvider>
+          {children}
+          <Scripts />
+        </LocaleProvider>
+      </body>
     </html>
   );
 }

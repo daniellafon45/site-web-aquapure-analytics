@@ -1,5 +1,6 @@
 import { contentToPlainText } from "./content";
-import { SEED_POSTS } from "./seed-posts";
+import { getSeedPostsForLocale } from "./seed-posts";
+import type { Locale } from "@/i18n/types";
 import type { BlogPost } from "./types";
 
 const STORAGE_KEY = "aquapure-blog-custom";
@@ -30,20 +31,25 @@ function writeCustomPosts(posts: BlogPost[]) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(posts));
 }
 
-export function getSeedPosts(): BlogPost[] {
-  return SEED_POSTS;
+export function getSeedPosts(locale: Locale = "fr"): BlogPost[] {
+  return getSeedPostsForLocale(locale);
 }
 
-export function getAllPosts(): BlogPost[] {
-  const seedSlugs = new Set(SEED_POSTS.map((p) => p.slug));
+export function getAllPosts(locale: Locale = "fr"): BlogPost[] {
+  const seeds = getSeedPostsForLocale(locale);
+  const seedSlugs = new Set(seeds.map((p) => p.slug));
   const custom = readCustomPosts().filter((p) => !seedSlugs.has(p.slug));
-  return [...SEED_POSTS, ...custom].sort(
+  return [...seeds, ...custom].sort(
     (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
   );
 }
 
-export function getPostBySlug(slug: string): BlogPost | undefined {
-  return getAllPosts().find((p) => p.slug === slug);
+export function getPostBySlug(slug: string, locale: Locale = "fr"): BlogPost | undefined {
+  return getAllPosts(locale).find((p) => p.slug === slug);
+}
+
+export function getPostById(id: string, locale: Locale = "fr"): BlogPost | undefined {
+  return getAllPosts(locale).find((p) => p.id === id);
 }
 
 export function addCustomPost(
@@ -65,7 +71,12 @@ export function addCustomPost(
   };
 
   const existing = readCustomPosts();
-  if (existing.some((p) => p.slug === post.slug) || SEED_POSTS.some((p) => p.slug === post.slug)) {
+  const allSeedSlugs = new Set(
+    (["fr", "en", "zh", "es"] as Locale[]).flatMap((l) =>
+      getSeedPostsForLocale(l).map((p) => p.slug),
+    ),
+  );
+  if (existing.some((p) => p.slug === post.slug) || allSeedSlugs.has(post.slug)) {
     throw new Error("Un article avec ce slug existe déjà.");
   }
 

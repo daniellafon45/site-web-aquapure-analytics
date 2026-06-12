@@ -23,7 +23,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
 
       - name: Install dependencies
@@ -33,11 +33,11 @@ jobs:
         run: npm run build
 
       - name: Validate Cloudflare bundle
-        run: npx wrangler deploy --dry-run
+        run: npx wrangler deploy --dry-run --config .output/server/wrangler.json
 
       - name: Deploy to Cloudflare Workers
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: deploy
+          command: deploy --config .output/server/wrangler.json

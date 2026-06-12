@@ -51,14 +51,16 @@ Dans **Workers & Pages** → connecter le dépôt GitHub, utilisez **Worker** (p
 
 | Paramètre | Valeur |
 |-----------|--------|
-| Type | **Worker** (pas « React (Vite) ») |
+| Type | **Pages** (avec Functions / Worker intégré) |
 | Production branch | `main` |
 | Framework preset | **None** |
 | Build command | `npm run build` |
-| Build output directory | **laisser vide** (ne pas mettre `/dist`) |
-| Deploy command | `npx wrangler deploy` |
+| Build output directory | **`dist`** |
+| Deploy command | *(laisser vide — Cloudflare utilise `dist/_worker.js/wrangler.json`)* |
 
-Le build génère `.output/server/` (worker) et `.output/public/` (assets), configurés dans `wrangler.toml`.
+Sur Cloudflare Pages, le build génère `dist/` (assets + `dist/_worker.js/`). Ne déclarez pas de binding `ASSETS` dans `wrangler.toml` : il est réservé et injecté automatiquement par Pages.
+
+Pour un déploiement **Worker** via GitHub Actions ou en local : `npm run deploy` (utilise `.output/server/wrangler.json` après build).
 
 ## Formulaire de contact
 

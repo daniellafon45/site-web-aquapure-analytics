@@ -1,6 +1,3 @@
 name = "site-web-aquapure-analytics"
 compatibility_date = "2026-06-09"
 compatibility_flags = ["nodejs_compat"]
-
-[build]
-command = "npm run build"

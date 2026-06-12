@@ -64,8 +64,14 @@ Pour un déploiement **Worker** via GitHub Actions ou en local : `npm run deploy
 
 ## Formulaire de contact
 
-Par défaut, le formulaire utilise FormSubmit depuis le navigateur vers `contact@aquapure-analytics.com`.  
-Activez l'adresse une première fois via le courriel de confirmation FormSubmit.
+Le formulaire envoie les messages **côté serveur** (Worker Cloudflare). Configurez au moins une variable d'environnement dans Cloudflare Pages → **Settings** → **Environment variables** :
+
+| Variable | Service | Configuration |
+|----------|---------|---------------|
+| `RESEND_API_KEY` | [Resend](https://resend.com) | Domaine vérifié + clé API |
+| `WEB3FORMS_ACCESS_KEY` | [Web3Forms](https://web3forms.com) | Clé d'accès gratuite (alternative rapide) |
+
+En local, copiez `.env.example` vers `.dev.vars` pour Wrangler ou `.env` pour le dev Vite.
 
 ## Sécurité et production
 

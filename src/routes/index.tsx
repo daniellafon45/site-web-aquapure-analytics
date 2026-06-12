@@ -44,7 +44,7 @@ import aquaHackingLogo from "@/assets/partners/aqua-hacking.png";
 import desjardinsLogo from "@/assets/partners/desjardins.png";
 import etsLogo from "@/assets/partners/ets.png";
 import oseEntreprendreLogo from "@/assets/partners/ose-entreprendre.png";
-import { submitContactFormClient } from "@/lib/contact-submit";
+import { submitContactForm } from "@/lib/api/contact.functions";
 import { useLocale } from "@/i18n/context";
 import { PageMeta } from "@/components/site/page-meta";
 
@@ -537,8 +537,14 @@ function Contact() {
     setSubmitting(true);
 
     try {
-      await submitContactFormClient(form);
+      await submitContactForm({
+        data: {
+          ...form,
+          botField,
+        },
+      });
       setForm(emptyContactForm);
+      setBotField("");
       setSuccess(true);
     } catch (err) {
       setError(err instanceof Error ? err.message : t.meta.errorBody);

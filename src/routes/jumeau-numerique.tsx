@@ -44,9 +44,12 @@ function DiagramWires() {
   );
 }
 
+const FORMAT_COLORS = ["text-amber-700", "text-emerald-700", "text-green-700", "text-sky-700"];
+
 function PlatformDiagram() {
   const { t } = useLocale();
   const diagram = t.digitalTwin.diagram;
+  const databases = ["PostgreSQL", "MongoDB", "SQL"];
   return (
     <div className="diagram-platform rounded-2xl border border-border/50 p-4 sm:p-5 md:p-8 lg:p-10 shadow-sm">
       <div className="relative mx-auto w-full max-w-6xl min-h-[380px] lg:min-h-[420px]">
@@ -57,27 +60,27 @@ function PlatformDiagram() {
             <article className="diagram-node diagram-node--violet p-5 text-left">
               <div className="flex items-center gap-2 mb-3">
                 <img src={logoAquapure} alt="" className="h-5 w-auto" />
-                <span className="text-[11px] font-semibold text-violet-900/80">{diagram.brandLabel}</span>
+                <span className="text-[11px] font-semibold text-violet-900/80">AquaPure Analytics</span>
               </div>
-              <p className="text-sm font-bold text-navy leading-snug">{diagram.hostedTitle}</p>
-              <p className="text-xs text-muted-foreground mt-1">{diagram.hostedSubtitle}</p>
+              <p className="text-sm font-bold text-navy leading-snug">{diagram.selfHostedDb}</p>
+              <p className="text-xs text-muted-foreground mt-1">{diagram.yourDatabase}</p>
               <div className="mt-4 flex flex-wrap gap-2">
-                {(diagram.databases || ["PostgreSQL", "MongoDB", "SQL"]).map((db: string) => (
+                {databases.map((db) => (
                   <span key={db} className="diagram-format">
                     <Database className="size-3 text-primary" />
                     {db}
                   </span>
                 ))}
               </div>
-              <p className="mt-3 text-[11px] font-semibold text-primary">{diagram.connectedLabel}</p>
+              <p className="mt-3 text-[11px] font-semibold text-primary">{diagram.connectedPlcs}</p>
 
               <div className="mt-5 pt-5 border-t border-border/50">
-                <p className="text-sm font-bold text-navy">{diagram.externalSourcesTitle}</p>
+                <p className="text-sm font-bold text-navy">{diagram.externalSources}</p>
                 <div className="mt-3 flex flex-wrap gap-2">
-                  {(diagram.externalFormats || [{ label: "JSON", color: "text-amber-700" }]).map((f: any) => (
-                    <span key={f.label} className="diagram-format">
-                      <Upload className={`size-3 ${f.color}`} />
-                      {f.label}
+                  {diagram.formatItems.map((label, i) => (
+                    <span key={label} className="diagram-format">
+                      <Upload className={`size-3 ${FORMAT_COLORS[i] ?? "text-amber-700"}`} />
+                      {label}
                     </span>
                   ))}
                 </div>
@@ -93,33 +96,33 @@ function PlatformDiagram() {
 
           <div className="w-full max-w-[320px] lg:justify-self-start">
             <article className="diagram-node diagram-node--sky p-5 md:p-6 text-left space-y-4">
-              <p className="text-sm font-bold text-navy">{diagram.platformTitle}</p>
+              <p className="text-sm font-bold text-navy">{diagram.controlPlatform}</p>
 
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">{diagram.interfaceLabel}</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">{diagram.intuitiveUi}</p>
                 <div className="mt-2 flex flex-wrap gap-1.5">
-                  {(diagram.interfaceItems || ["Grille", "Moniteur", "Éditeur", "Formulaire"]).map((t: string) => (
-                    <span key={t} className="diagram-format text-[11px]">
-                      {t}
+                  {diagram.uiItems.map((item) => (
+                    <span key={item} className="diagram-format text-[11px]">
+                      {item}
                     </span>
                   ))}
                 </div>
-                <p className="mt-2 text-[11px] font-semibold text-primary">{diagram.moreLabel}</p>
+                <p className="mt-2 text-[11px] font-semibold text-primary">{diagram.andMore}</p>
               </div>
 
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">{diagram.apiServerLabel}</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">{diagram.localApi}</p>
                 <div className="mt-2 space-y-1.5">
-                  {(diagram.serverTargets || ["Web", "Applications tierces", "Mobile"]).map((t: string) => (
-                    <div key={t} className="diagram-format w-full justify-start text-[11px]">
-                      {t}
+                  {diagram.apiItems.map((item) => (
+                    <div key={item} className="diagram-format w-full justify-start text-[11px]">
+                      {item}
                     </div>
                   ))}
                 </div>
               </div>
 
               <div className="rounded-xl border border-border/50 bg-white p-3">
-                <p className="text-[10px] font-semibold text-muted-foreground leading-snug">{diagram.requestLabel}</p>
+                <p className="text-[10px] font-semibold text-muted-foreground leading-snug">{diagram.queryAutomate}</p>
                 <div className="mt-3 h-[4.5rem] rounded-lg bg-gradient-to-br from-slate-50 to-white border border-border/40 relative overflow-hidden">
                   <svg className="absolute inset-2 w-[calc(100%-1rem)] h-[calc(100%-1rem)]" viewBox="0 0 200 60" aria-hidden>
                     <polyline points="0,45 30,38 55,42 80,22 105,28 130,15 155,25 180,10 200,18" fill="none" stroke="oklch(0.55 0.22 264)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -174,7 +177,7 @@ function JumeauNumeriquePage() {
         <div className="mx-auto max-w-5xl text-center">
           <Reveal>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-black leading-tight">{t.digitalTwin.title}</h1>
-            <p className="mt-5 text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">{t.digitalTwin.lead}</p>
+            <p className="mt-5 text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">{t.digitalTwin.subtitle}</p>
           </Reveal>
           <Reveal delay={120} className="mt-10">
             <PlatformDiagram />
@@ -187,7 +190,7 @@ function JumeauNumeriquePage() {
           <Reveal>
             <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight">{t.digitalTwin.whyTitle}</h2>
-              <p className="mt-4 text-sm md:text-base text-white/60 leading-relaxed">{t.digitalTwin.whyLead}</p>
+              <p className="mt-4 text-sm md:text-base text-white/60 leading-relaxed">{t.digitalTwin.whySubtitle}</p>
             </div>
           </Reveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
@@ -208,7 +211,7 @@ function JumeauNumeriquePage() {
         <div className="mx-auto max-w-7xl text-center">
           <Reveal>
             <h2 className="text-2xl md:text-3xl font-bold text-black leading-tight">{t.digitalTwin.partnersTitle}</h2>
-            <p className="mt-3 text-sm md:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">{t.digitalTwin.partnersLead}</p>
+            <p className="mt-3 text-sm md:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">{t.digitalTwin.partnersSubtitle}</p>
           </Reveal>
           <Reveal delay={100}>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-10 md:gap-14">
@@ -223,18 +226,18 @@ function JumeauNumeriquePage() {
       <section className="px-4 sm:px-6 pb-16 sm:pb-20">
         <div className="mx-auto max-w-7xl">
           <Reveal>
-            <h2 className="text-center text-2xl md:text-3xl font-bold text-black">{t.digitalTwin.contactTitle}</h2>
+            <h2 className="text-center text-2xl md:text-3xl font-bold text-black">{t.digitalTwin.ctaTitle}</h2>
           </Reveal>
           <div className="mt-10 grid md:grid-cols-2 gap-6">
             {[
-              { img: indWater, label: t.digitalTwin.contactCardMunicipal, href: "/#contact" },
-              { img: indMine, label: t.digitalTwin.contactCardIndustry, href: "/#contact" },
+              { img: indWater, label: t.digitalTwin.municipal, href: "/#contact" },
+              { img: indMine, label: t.digitalTwin.industry, href: "/#contact" },
             ].map((card, i) => (
               <Reveal key={card.label} delay={i * 100}>
                 <a href={card.href} className="group relative block aspect-[16/9] overflow-hidden rounded-2xl border border-border/60 hover-lift">
                   <img src={card.img} alt={card.label} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    <span className="rounded-md bg-white text-navy px-5 py-2.5 text-sm font-semibold shadow-md group-hover:bg-white/90 transition-colors">{t.digitalTwin.contactCta}</span>
+                    <span className="rounded-md bg-white text-navy px-5 py-2.5 text-sm font-semibold shadow-md group-hover:bg-white/90 transition-colors">{t.digitalTwin.contactUs}</span>
                   </div>
                   <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
                   <span className="absolute bottom-6 left-6 text-xl md:text-2xl font-bold text-white">{card.label}</span>

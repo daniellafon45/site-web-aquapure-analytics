@@ -38,7 +38,11 @@ type LocaleContextValue = {
 const LocaleContext = createContext<LocaleContextValue | null>(null);
 
 export function LocaleProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>(() => readStoredLocale());
+  const [locale, setLocaleState] = useState<Locale>("fr");
+
+  useEffect(() => {
+    setLocaleState(readStoredLocale());
+  }, []);
 
   const setLocale = useCallback((next: Locale) => {
     setLocaleState(next);

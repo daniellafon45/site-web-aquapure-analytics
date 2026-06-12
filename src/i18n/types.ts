@@ -8,6 +8,13 @@ export const LOCALE_LABELS: Record<Locale, string> = {
   es: "Español",
 };
 
+export const LOCALE_SHORT: Record<Locale, string> = {
+  fr: "FR",
+  en: "EN",
+  zh: "中文",
+  es: "ES",
+};
+
 export const LOCALE_HTML_LANG: Record<Locale, string> = {
   fr: "fr",
   en: "en",

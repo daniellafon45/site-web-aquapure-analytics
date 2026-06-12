@@ -92,33 +92,36 @@ function SpreadsheetHoverBackground({ children }: { children: ReactNode }) {
   );
 }
 
+const INDUSTRY_IMAGES: Record<string, string> = {
+  "eaux-municipales": indWater,
+  mine: indMine,
+  "pate-et-papier": indPaper,
+  agroalimentaire: indAgro,
+};
+
 function Hero() {
   const { t } = useLocale();
   return (
     <section className="pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 text-center">
         <Reveal>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.08]">
-            <span className="text-black">
-              {t.home.hero.title}
-              <br className="hidden sm:block" />
-              {t.home.hero.subtitle}
-            </span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.08] text-black">
+            {t.home.hero.title}
           </h1>
         </Reveal>
         <Reveal delay={120}>
           <p className="mt-6 text-base text-muted-foreground max-w-xl mx-auto leading-relaxed">
-            {t.home.hero.lead}
-            <span className="mt-3 block font-semibold text-foreground">{t.home.hero.leadHighlight}</span>
+            {t.home.hero.subtitle}
+            <span className="mt-3 block font-semibold text-foreground">{t.home.hero.hosting}</span>
           </p>
         </Reveal>
         <Reveal delay={220}>
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center items-stretch sm:items-center max-w-sm sm:max-w-none mx-auto">
             <a href="#contact" className="rounded-md border border-input bg-background px-5 py-2.5 text-sm font-medium hover:bg-accent transition-colors text-center">
-              {t.home.hero.ctaContact}
+              {t.home.hero.contact}
             </a>
             <a href="#contact" className="group rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-all hover:shadow-lg hover:shadow-primary/30 inline-flex items-center justify-center gap-1.5">
-              {t.home.hero.ctaDemo} <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+              {t.home.hero.demo} <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
             </a>
           </div>
         </Reveal>
@@ -135,13 +138,13 @@ function Industries() {
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <div className="text-[11px] font-semibold tracking-[0.2em] text-muted-foreground uppercase">{t.home.industries.kicker}</div>
+            <div className="text-[11px] font-semibold tracking-[0.2em] text-muted-foreground uppercase">{t.home.industries.eyebrow}</div>
             <h2 className="mt-4 text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-black leading-[1.15]">{t.home.industries.title}</h2>
-            <p className="mt-4 text-base md:text-lg text-black leading-relaxed max-w-3xl mx-auto">{t.home.industries.lead}</p>
+            <p className="mt-4 text-base md:text-lg text-black leading-relaxed max-w-3xl mx-auto">{t.home.industries.description}</p>
           </div>
         </Reveal>
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
-          {items.map((it: any, i: number) => (
+          {items.map((it, i) => (
             <Reveal key={it.id} delay={i * 100} className="h-full">
               <article
                 id={it.id}
@@ -149,7 +152,7 @@ function Industries() {
               >
                 <div className="relative aspect-[16/10] shrink-0 overflow-hidden">
                   <img
-                    src={it.img}
+                    src={INDUSTRY_IMAGES[it.id]}
                     alt={it.label}
                     width={800}
                     height={500}
@@ -162,7 +165,7 @@ function Industries() {
                       href="#contact"
                       className="rounded-md bg-white text-navy px-5 py-2.5 text-sm font-semibold shadow-md hover:bg-white/90 transition-colors"
                     >
-                      {t.home.industries.cta}
+                      {t.home.industries.scheduleMeeting}
                     </a>
                   </div>
                   <span className="absolute bottom-4 left-5 text-[11px] font-bold tracking-[0.18em] text-white">{it.label}</span>
@@ -254,8 +257,8 @@ function Features() {
       <div className="mx-auto max-w-7xl grid lg:grid-cols-2 gap-8 lg:gap-10 items-start">
         <div>
           <h2 className="text-3xl md:text-4xl font-bold text-navy">{t.home.features.title}</h2>
-          <p className="mt-3 text-sm md:text-base text-navy/85 max-w-md leading-relaxed font-medium">{t.home.features.lead}</p>
-          <p className="mt-3 text-sm md:text-base text-muted-foreground max-w-md leading-relaxed">{t.home.features.leadSecondary}</p>
+          <p className="mt-3 text-sm md:text-base text-navy/85 max-w-md leading-relaxed font-medium">{t.home.features.ergonomic}</p>
+          <p className="mt-3 text-sm md:text-base text-muted-foreground max-w-md leading-relaxed">{t.home.features.body}</p>
           <div className="mt-8 space-y-5">
             {featureRows.map((row) => (
               <div key={row.title} className="flex flex-col gap-3 sm:grid sm:grid-cols-[minmax(0,140px)_minmax(0,1fr)] sm:items-center sm:gap-4">
@@ -329,13 +332,45 @@ function StatCircle({
 
 function Stats() {
   const { t } = useLocale();
-  const items = t.home.stats.items;
+  const items = [
+    {
+      value: "24/7",
+      label: t.home.stats.monitoring,
+      icon: (
+        <div className="size-14 rounded-md border-2 border-navy/80 grid place-items-center relative shrink-0">
+          <div className="absolute top-0 left-2 w-1 h-2 bg-yellow-400 -translate-y-1" />
+          <div className="absolute top-0 right-2 w-1 h-2 bg-yellow-400 -translate-y-1" />
+          <Calendar className="size-7 text-navy/80" />
+        </div>
+      ),
+    },
+    {
+      value: "-18%",
+      label: t.home.stats.energy,
+      icon: (
+        <StatCircle color="oklch(0.75 0.16 70)" progress={18}>
+          <Zap className="size-5 text-yellow-500 fill-yellow-500" />
+        </StatCircle>
+      ),
+    },
+    {
+      value: "-30%",
+      label: t.home.stats.carbon,
+      icon: (
+        <StatCircle color="oklch(0.7 0.15 160)" progress={30}>
+          <span className="text-[10px] font-bold text-emerald-700">
+            CO<sub>2</sub>
+          </span>
+        </StatCircle>
+      ),
+    },
+  ];
 
   return (
     <section className="px-4 sm:px-6 pb-16 sm:pb-20">
       <div className="mx-auto max-w-5xl rounded-2xl border border-border bg-card px-5 py-8 sm:px-8 sm:py-10 md:px-12">
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 lg:gap-16">
-          {items.map((item: any) => (
+          {items.map((item) => (
             <div key={item.value} className="flex w-full max-w-[280px] sm:w-[240px] items-center gap-5">
               {item.icon}
               <div className="min-w-0">
@@ -369,7 +404,7 @@ function Integrations() {
       <div className="mx-auto max-w-7xl rounded-2xl bg-soft px-4 py-10 sm:px-6 md:px-10 sm:py-14 overflow-hidden">
         <Reveal>
           <h2 className="text-center text-2xl md:text-3xl font-bold text-navy">{t.home.integrations.title}</h2>
-          <p className="mt-3 text-center text-sm md:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">{t.home.integrations.lead}</p>
+          <p className="mt-3 text-center text-sm md:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">{t.home.integrations.description}</p>
         </Reveal>
         <div className="mt-12 relative [mask-image:linear-gradient(to_right,transparent,#000_8%,#000_92%,transparent)]">
           <div className="flex w-max items-center gap-20 md:gap-24 animate-marquee">
@@ -396,8 +431,8 @@ function TrustedBy() {
     <section className="px-4 sm:px-6 pb-16 sm:pb-20">
       <div className="mx-auto max-w-7xl text-center overflow-hidden">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-bold text-black leading-tight">{t.home.trustedBy.title}</h2>
-          <p className="mt-3 text-sm md:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">{t.home.trustedBy.lead}</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-black leading-tight">{t.home.partners.title}</h2>
+          <p className="mt-3 text-sm md:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">{t.home.partners.description}</p>
         </Reveal>
         <div className="mt-10 relative [mask-image:linear-gradient(to_right,transparent,#000_8%,#000_92%,transparent)]">
           <div className="flex w-max items-center gap-16 md:gap-20 animate-marquee">
@@ -457,22 +492,21 @@ function ContactField({
   );
 }
 
-function validateContactForm(form: ContactFormState): string | null {
-  const { t } = useLocale();
-  if (!form.lastName.trim()) return t.home.contact.errors.lastNameRequired;
-  if (!form.firstName.trim()) return t.home.contact.errors.firstNameRequired;
-  if (!form.email.trim()) return t.home.contact.errors.emailRequired;
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
-    return t.home.contact.errors.emailInvalid;
-  }
-  if (!form.message.trim()) return t.home.contact.errors.messageRequired;
-  if (form.message.length > 5000) return t.home.contact.errors.messageTooLong;
-  if (form.email.length > 254) return t.home.contact.errors.emailTooLong;
-  return null;
-}
-
 function Contact() {
   const { t } = useLocale();
+
+  const validateContactForm = (form: ContactFormState): string | null => {
+    if (!form.lastName.trim()) return t.home.contact.errors.lastName;
+    if (!form.firstName.trim()) return t.home.contact.errors.firstName;
+    if (!form.email.trim()) return t.home.contact.errors.emailRequired;
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
+      return t.home.contact.errors.emailInvalid;
+    }
+    if (!form.message.trim()) return t.home.contact.errors.message;
+    if (form.message.length > 5000) return t.home.contact.errors.messageTooLong;
+    if (form.email.length > 254) return t.home.contact.errors.emailTooLong;
+    return null;
+  };
   const [form, setForm] = useState<ContactFormState>(emptyContactForm);
   const [botField, setBotField] = useState("");
   const [submitting, setSubmitting] = useState(false);
@@ -507,7 +541,7 @@ function Contact() {
       setForm(emptyContactForm);
       setSuccess(true);
     } catch (err) {
-      setError(err instanceof Error ? err.message : t.home.contact.errors.generic);
+      setError(err instanceof Error ? err.message : t.meta.errorBody);
     } finally {
       setSubmitting(false);
     }
@@ -519,46 +553,46 @@ function Contact() {
         <div className="grid lg:grid-cols-2">
           <div className="p-6 sm:p-8 lg:p-12 lg:pr-8">
             <h3 className="text-2xl md:text-3xl font-bold max-w-sm leading-tight">{t.home.contact.title}</h3>
-            <p className="mt-5 text-sm text-white/70 max-w-md leading-relaxed">{t.home.contact.lead}</p>
+            <p className="mt-5 text-sm text-white/70 max-w-md leading-relaxed">{t.home.contact.subtitle}</p>
           </div>
 
           <div className="border-t lg:border-t-0 lg:border-l border-white/10 p-6 sm:p-8 lg:p-12 lg:pl-10">
-            <h3 className="text-xl md:text-2xl font-bold">{t.home.contact.form.title}</h3>
+            <h3 className="text-xl md:text-2xl font-bold">{t.home.contact.formTitle}</h3>
             <form className="mt-6 space-y-4" onSubmit={handleSubmit} noValidate>
               <label className="sr-only" aria-hidden="true">
-                Ne pas remplir
+                {t.home.contact.honeypot}
                 <input tabIndex={-1} autoComplete="off" value={botField} onChange={(e) => setBotField(e.target.value)} />
               </label>
               <div className="grid sm:grid-cols-2 gap-4">
-                <ContactField label={t.home.contact.form.firstName} name="firstName" value={form.firstName} onChange={updateField} />
-                <ContactField label={t.home.contact.form.lastName} name="lastName" value={form.lastName} onChange={updateField} />
+                <ContactField label={t.home.contact.firstName} name="firstName" value={form.firstName} onChange={updateField} />
+                <ContactField label={t.home.contact.lastName} name="lastName" value={form.lastName} onChange={updateField} />
               </div>
               <div className="grid sm:grid-cols-2 gap-4">
-                <ContactField label={t.home.contact.form.email} name="email" type="email" value={form.email} onChange={updateField} />
-                <ContactField label={t.home.contact.form.phone} name="phone" type="tel" value={form.phone} onChange={updateField} />
+                <ContactField label={t.home.contact.email} name="email" type="email" value={form.email} onChange={updateField} />
+                <ContactField label={t.home.contact.phone} name="phone" type="tel" value={form.phone} onChange={updateField} />
               </div>
               <div className="grid sm:grid-cols-2 gap-4">
-                <ContactField label={t.home.contact.form.company} name="company" value={form.company} onChange={updateField} />
-                <ContactField label={t.home.contact.form.website} name="website" value={form.website} onChange={updateField} placeholder={t.home.contact.form.websitePlaceholder} />
+                <ContactField label={t.home.contact.company} name="company" value={form.company} onChange={updateField} />
+                <ContactField label={t.home.contact.website} name="website" value={form.website} onChange={updateField} placeholder={t.home.contact.websitePlaceholder} />
               </div>
               <div>
                 <label className="text-sm text-white/90" htmlFor="message">
-                  {t.home.contact.form.messageLabel}
+                  {t.home.contact.need}
                   <span className="text-red-400">*</span>
                 </label>
-                <textarea id="message" name="message" rows={5} value={form.message} onChange={(e) => updateField("message", e.target.value)} placeholder={t.home.contact.form.messagePlaceholder} className="mt-2 w-full rounded-xl bg-white px-3 py-3 text-navy outline-none resize-y min-h-[120px] placeholder:text-navy/40" />
+                <textarea id="message" name="message" rows={5} value={form.message} onChange={(e) => updateField("message", e.target.value)} placeholder={t.home.contact.needPlaceholder} className="mt-2 w-full rounded-xl bg-white px-3 py-3 text-navy outline-none resize-y min-h-[120px] placeholder:text-navy/40" />
               </div>
 
               {error && <p className="text-sm text-red-300">{error}</p>}
               {success && (
                 <div className="rounded-xl border border-white/20 bg-white/10 p-4 text-sm leading-relaxed">
-                  <p className="font-semibold text-white">{t.home.contact.success.title}</p>
-                  <p className="mt-1.5 text-white/80">{t.home.contact.success.body}</p>
+                  <p className="font-semibold text-white">{t.home.contact.successTitle}</p>
+                  <p className="mt-1.5 text-white/80">{t.home.contact.successBody}</p>
                 </div>
               )}
 
               <button type="submit" disabled={submitting} className="rounded-md bg-white text-navy px-5 py-2.5 text-sm font-semibold hover:bg-white/90 transition-colors disabled:opacity-60 disabled:cursor-not-allowed">
-                {submitting ? t.home.contact.form.sending : t.home.contact.form.submit}
+                {submitting ? t.home.contact.submitting : t.home.contact.submit}
               </button>
             </form>
           </div>

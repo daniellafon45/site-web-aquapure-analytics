@@ -63,29 +63,23 @@ export function SiteNav({ active }: { active?: string }) {
         </nav>
 
         <div className="hidden lg:flex items-center gap-2 xl:gap-3 shrink-0">
-          <LanguageSwitcher />
-          <a
-            href="/#contact"
-            className="rounded-md border border-input bg-background px-4 py-2 text-sm font-medium hover:bg-accent whitespace-nowrap"
-          >
-            {t.nav.contact}
-          </a>
           <a
             href="/#contact"
             className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 whitespace-nowrap"
           >
             {t.nav.requestDemo}
           </a>
+          <LanguageSwitcher />
         </div>
 
         <div className="flex lg:hidden items-center gap-2 shrink-0">
-          <LanguageSwitcher compact />
           <a
             href="/#contact"
             className="rounded-md bg-primary px-3 py-2 text-xs sm:text-sm font-medium text-primary-foreground hover:bg-primary/90 whitespace-nowrap"
           >
             {t.nav.demoShort}
           </a>
+          <LanguageSwitcher compact />
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger
               className="inline-flex size-10 items-center justify-center rounded-md border border-input bg-background hover:bg-accent"
@@ -104,17 +98,11 @@ export function SiteNav({ active }: { active?: string }) {
                 <a
                   href="/#contact"
                   onClick={closeMenu}
-                  className="rounded-md border border-input bg-background px-4 py-2.5 text-center text-sm font-medium hover:bg-accent"
-                >
-                  {t.nav.contact}
-                </a>
-                <a
-                  href="/#contact"
-                  onClick={closeMenu}
                   className="rounded-md bg-primary px-4 py-2.5 text-center text-sm font-medium text-primary-foreground hover:bg-primary/90"
                 >
                   {t.nav.requestDemo}
                 </a>
+                <LanguageSwitcher />
               </div>
             </SheetContent>
           </Sheet>

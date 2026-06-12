@@ -45,13 +45,20 @@ npm run deploy
 
 ### Cloudflare Dashboard (alternative)
 
-Dans **Workers & Pages** → **Create** → connecter le dépôt GitHub :
+Ce site est une application **SSR (TanStack Start + Worker)** — pas un site statique Vite.
+
+Dans **Workers & Pages** → connecter le dépôt GitHub, utilisez **Worker** (pas Pages statique) :
 
 | Paramètre | Valeur |
 |-----------|--------|
-| Framework | None |
+| Type | **Worker** (pas « React (Vite) ») |
+| Production branch | `main` |
+| Framework preset | **None** |
 | Build command | `npm run build` |
+| Build output directory | **laisser vide** (ne pas mettre `/dist`) |
 | Deploy command | `npx wrangler deploy` |
+
+Le build génère `.output/server/` (worker) et `.output/public/` (assets), configurés dans `wrangler.toml`.
 
 ## Formulaire de contact
 

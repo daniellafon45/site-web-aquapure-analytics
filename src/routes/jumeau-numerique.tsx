@@ -24,6 +24,7 @@ import etsLogo from "@/assets/partners/ets.png";
 import oseEntreprendreLogo from "@/assets/partners/ose-entreprendre.png";
 import { useLocale } from "@/i18n/context";
 import { PageMeta } from "@/components/site/page-meta";
+import { SpreadsheetHoverBackground } from "@/components/site/spreadsheet-hover-background";
 
 export const Route = createFileRoute("/jumeau-numerique")({
   component: JumeauNumeriquePage,
@@ -169,7 +170,7 @@ function JumeauNumeriquePage() {
   }));
 
   return (
-    <main className="bg-background overflow-hidden">
+    <SpreadsheetHoverBackground>
       <PageMeta title={t.meta.digitalTwinTitle} description={t.meta.digitalTwinDescription} />
       <SiteNav active="jumeau-numerique" />
 
@@ -249,6 +250,6 @@ function JumeauNumeriquePage() {
       </section>
 
       <SiteFooter />
-    </main>
+    </SpreadsheetHoverBackground>
   );
 }

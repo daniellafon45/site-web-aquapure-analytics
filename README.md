@@ -73,6 +73,25 @@ Le formulaire envoie les messages **côté serveur** (Worker Cloudflare). Config
 
 En local, copiez `.env.example` vers `.dev.vars` pour Wrangler ou `.env` pour le dev Vite.
 
+## Référencement (Google / AI)
+
+Le site canonique est **https://aquapure-analytics.com** (sans `www`).
+
+### Actions requises côté DNS / Cloudflare
+
+1. **Rediriger `www` vers le domaine nu** — aujourd'hui `www.aquapure-analytics.com` pointe encore vers une page Hostinger « domaine parqué », ce qui empêche Google d'associer la marque au bon site. Dans Cloudflare : règle de redirection `www.aquapure-analytics.com/*` → `https://aquapure-analytics.com/$1` (301).
+2. **Google Search Console** — ajoutez la propriété `https://aquapure-analytics.com`, vérifiez le domaine, puis soumettez le sitemap : `https://aquapure-analytics.com/sitemap.xml`.
+3. **Bing Webmaster Tools** — même sitemap pour Microsoft Copilot / Bing.
+4. **Robots Cloudflare (optionnel AI SEO)** — le robots.txt géré par Cloudflare peut bloquer `GPTBot`, `ClaudeBot`, etc. Pour la visibilité dans ChatGPT/Perplexity, autorisez au minimum `PerplexityBot` et `ChatGPT-User` dans le tableau de bord Cloudflare (Scrape Shield / AI bots).
+
+### Fichiers SEO livrés
+
+- `public/sitemap.xml` — plan du site pour l'indexation
+- `public/robots.txt` — autorise l'indexation (sauf `/adminblog`)
+- `public/llms.txt` — contexte pour les moteurs IA
+- JSON-LD `Organization` + `WebSite` injecté dans le HTML (SSR)
+- URL canonique et balises Open Graph sur chaque page publique
+
 ## Sécurité et production
 
 - En-têtes HTTP de sécurité appliqués par le worker (`X-Frame-Options`, `X-Content-Type-Options`, etc.)

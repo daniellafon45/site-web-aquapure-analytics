@@ -8,13 +8,17 @@ import { getPostBySlug, getSeedPosts, getPostById } from "@/lib/blog/store";
 import type { BlogPost } from "@/lib/blog/types";
 import { useLocale } from "@/i18n/context";
 import { PageMeta } from "@/components/site/page-meta";
+import { buildPageHead } from "@/lib/seo/site-config";
 
 export const Route = createFileRoute("/blogue/$slug")({
   head: ({ params }) => {
     const post = getSeedPosts().find((p) => p.slug === params.slug);
-    return {
-      meta: [{ title: post ? `${post.title}, Blogue AquaPure` : "Article, Blogue AquaPure" }, { name: "description", content: post?.excerpt ?? "" }],
-    };
+    return buildPageHead({
+      title: post ? `${post.title} — Blogue AquaPure Analytics` : "Article — Blogue AquaPure Analytics",
+      description: post?.excerpt ?? "",
+      path: `/blogue/${params.slug}`,
+      type: "article",
+    });
   },
   component: BlogArticlePage,
 });

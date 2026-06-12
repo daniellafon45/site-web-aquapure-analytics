@@ -15,9 +15,11 @@ export function applySecurityHeaders(response: Response, request: Request): Resp
     }
   }
 
-  const { pathname } = new URL(request.url);
+  const { pathname, hostname } = new URL(request.url);
   if (pathname.startsWith("/adminblog")) {
     headers.set("X-Robots-Tag", "noindex, nofollow");
+  } else if (hostname.endsWith(".pages.dev")) {
+    headers.set("X-Robots-Tag", "noindex, follow");
   }
 
   return new Response(response.body, {

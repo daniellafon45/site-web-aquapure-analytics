@@ -1,0 +1,25 @@
+# AquaPure Analytics
+
+> Plateforme québécoise de gestion des eaux municipales et des effluents miniers et industriels par la donnée, l'IA et le jumeau numérique.
+
+## Site officiel
+
+- https://aquapure-analytics.com/
+
+## Pages clés
+
+- Accueil : https://aquapure-analytics.com/
+- Jumeau numérique : https://aquapure-analytics.com/jumeau-numerique
+- Blogue : https://aquapure-analytics.com/blogue
+
+## Secteurs
+
+- Eaux municipales (traitement, coûts chimiques et énergie)
+- Mine (conformité Directive 019, métaux lourds)
+- Pâte et papier (eaux de procédé, biodigestion)
+- Agroalimentaire (qualité et conformité de l'eau)
+
+## Contact
+
+- Courriel : contact@aquapure-analytics.com
+- LinkedIn : https://www.linkedin.com/company/aquapure-analytics/

@@ -25,8 +25,16 @@ import oseEntreprendreLogo from "@/assets/partners/ose-entreprendre.png";
 import { useLocale } from "@/i18n/context";
 import { PageMeta } from "@/components/site/page-meta";
 import { SpreadsheetHoverBackground } from "@/components/site/spreadsheet-hover-background";
+import { fr } from "@/i18n/translations/fr";
+import { buildPageHead } from "@/lib/seo/site-config";
 
 export const Route = createFileRoute("/jumeau-numerique")({
+  head: () =>
+    buildPageHead({
+      title: fr.meta.digitalTwinTitle,
+      description: fr.meta.digitalTwinDescription,
+      path: "/jumeau-numerique",
+    }),
   component: JumeauNumeriquePage,
 });
 

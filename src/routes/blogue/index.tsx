@@ -6,8 +6,16 @@ import { Reveal } from "@/components/site/reveal";
 import { useBlogPosts } from "@/hooks/use-blog-posts";
 import { useLocale } from "@/i18n/context";
 import { PageMeta } from "@/components/site/page-meta";
+import { fr } from "@/i18n/translations/fr";
+import { buildPageHead } from "@/lib/seo/site-config";
 
 export const Route = createFileRoute("/blogue/")({
+  head: () =>
+    buildPageHead({
+      title: fr.meta.blogTitle,
+      description: fr.meta.blogDescription,
+      path: "/blogue",
+    }),
   component: BloguePage,
 });
 

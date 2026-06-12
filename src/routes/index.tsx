@@ -48,8 +48,16 @@ import { submitContactForm } from "@/lib/api/contact.functions";
 import { useLocale } from "@/i18n/context";
 import { PageMeta } from "@/components/site/page-meta";
 import { SpreadsheetHoverBackground } from "@/components/site/spreadsheet-hover-background";
+import { fr } from "@/i18n/translations/fr";
+import { buildPageHead } from "@/lib/seo/site-config";
 
 export const Route = createFileRoute("/")({
+  head: () =>
+    buildPageHead({
+      title: fr.meta.homeTitle,
+      description: fr.meta.homeDescription,
+      path: "/",
+    }),
   component: Index,
 });
 

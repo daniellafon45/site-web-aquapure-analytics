@@ -12,6 +12,14 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { LocaleProvider, useLocale } from "../i18n/context";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import {
+  DEFAULT_DESCRIPTION,
+  SITE_NAME,
+  buildPageHead,
+  organizationJsonLd,
+} from "../lib/seo/site-config";
+
+const ORGANIZATION_JSON_LD = JSON.stringify(organizationJsonLd());
 
 function NotFoundComponent() {
   const { t } = useLocale();
@@ -53,26 +61,30 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Aquapure Analytics — Maîtrisez la gestion des eaux municipales et effluents miniers et industriels" },
-      { name: "description", content: "Optimisez la gestion de l'eau grâce à la donnée, l'IA et l'intelligence en temps réel. Réduisez vos coûts, atteignez vos objectifs ESG." },
-      { property: "og:title", content: "Aquapure Analytics" },
-      { property: "og:description", content: "Maîtrisez la gestion des eaux municipales et des effluents miniers et industriels grâce à la donnée et l'IA. Optimisez vos opérations, réduisez vos coûts et votre impact environnemental." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [
-      { rel: "icon", type: "image/png", href: "/favicon.png" },
-      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" },
-      { rel: "stylesheet", href: appCss },
-    ],
-  }),
+  head: () => {
+    const page = buildPageHead({
+      title: `${SITE_NAME} — Maîtrisez la gestion des eaux municipales et effluents miniers et industriels`,
+      description: DEFAULT_DESCRIPTION,
+      path: "/",
+    });
+
+    return {
+      meta: [
+        { charSet: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        ...page.meta,
+      ],
+      links: [
+        { rel: "icon", type: "image/png", href: "/favicon.png" },
+        { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+        { rel: "preconnect", href: "https://fonts.googleapis.com" },
+        { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+        { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" },
+        { rel: "stylesheet", href: appCss },
+        ...page.links,
+      ],
+    };
+  },
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
@@ -82,7 +94,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="fr">
-      <head><HeadContent /></head>
+      <head>
+        <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: ORGANIZATION_JSON_LD }}
+        />
+      </head>
       <body>
         <LocaleProvider>
           {children}

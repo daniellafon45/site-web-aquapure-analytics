@@ -2,9 +2,9 @@ import type { Translations } from "../types";
 
 export const fr: Translations = {
   meta: {
-    homeTitle: "Aquapure Analytics — Maîtrisez la gestion des eaux municipales et effluents miniers et industriels",
+    homeTitle: "AquaPure Analytics — Maîtrisez la gestion des eaux municipales et effluents miniers et industriels",
     homeDescription:
-      "Optimisez la gestion de l'eau grâce à la donnée, l'IA et l'intelligence en temps réel. Réduisez vos coûts, atteignez vos objectifs ESG.",
+      "AquaPure Analytics optimise la gestion des eaux municipales et des effluents miniers et industriels grâce à la donnée, l'IA et l'analyse en temps réel au Québec.",
     digitalTwinTitle: "Jumeau numérique, Aquapure Analytics",
     digitalTwinDescription:
       "Découvrez comment AquaPure connecte vos bases de données et exploite un agent IA auto-hébergé pour automatiser vos procédés industriels et optimiser le contrôle en temps réel.",

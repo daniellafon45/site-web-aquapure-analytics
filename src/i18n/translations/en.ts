@@ -2,7 +2,7 @@ import type { Translations } from "../types";
 
 export const en: Translations = {
   meta: {
-    homeTitle: "AquaPure Analytics — Master Your Water Operations",
+    homeTitle: "AquaPure Analytics — Master municipal water and mining and industrial effluent management",
     homeDescription:
       "Optimize water management with data, AI and real-time intelligence. Reduce costs and meet your ESG targets.",
     digitalTwinTitle: "Digital Twin — AquaPure Analytics",
@@ -45,7 +45,7 @@ export const en: Translations = {
   },
   home: {
     hero: {
-      title: "Master your water operations with data and AI",
+      title: "Master municipal water and mining and industrial effluent management with data and AI",
       subtitle:
         "Turn your data into immediate decisions: less waste, more control, and sustainable performance — without disrupting existing operations.",
       hosting: "Your data hosted in Quebec, on your premises.",
@@ -62,20 +62,20 @@ export const en: Translations = {
         {
           id: "eaux-municipales",
           label: "MUNICIPAL WATER",
-          title: "Efficient distribution, quality water.",
-          desc: "Ensure efficient distribution and water quality with real-time analytics to detect leaks and optimize treatment for communities.",
+          title: "Optimized treatment, controlled costs and impact.",
+          desc: "Run water treatment operations in real time to cut chemical and energy costs, stabilize processes and reduce the environmental footprint of your municipal plant.",
         },
         {
           id: "mine",
           label: "MINING",
-          title: "Optimized extraction, managed impact.",
-          desc: "Optimize extraction and resource management with robust predictive models that maintain operational safety and reduce environmental impact.",
+          title: "Strengthen your Directive 019 compliance monitoring.",
+          desc: "Monitor mining effluent quality and regulatory thresholds in real time, especially for heavy metals: anticipate deviations, document compliance and reduce environmental risk.",
         },
         {
           id: "pate-et-papier",
           label: "PULP & PAPER",
-          title: "Industrial water under control.",
-          desc: "Reduce water consumption and control effluent treatment with real-time supervision and predictive maintenance of your facilities.",
+          title: "Process water guided, biodigestion strengthened.",
+          desc: "Manage water from your operations and optimize effluent biodigestion in real time: stabilize processes, improve biological yield and reduce treatment costs.",
         },
         {
           id: "agroalimentaire",

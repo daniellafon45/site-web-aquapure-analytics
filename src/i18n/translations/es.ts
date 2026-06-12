@@ -2,7 +2,7 @@ import type { Translations } from "../types";
 
 export const es: Translations = {
   meta: {
-    homeTitle: "AquaPure Analytics — Domina tus operaciones hídricas",
+    homeTitle: "AquaPure Analytics — Domina la gestión de aguas municipales y efluentes mineros e industriales",
     homeDescription:
       "Optimiza la gestión del agua con datos, IA e inteligencia en tiempo real. Reduce costos y alcanza tus metas ESG.",
     digitalTwinTitle: "Gemelo digital — AquaPure Analytics",
@@ -45,7 +45,7 @@ export const es: Translations = {
   },
   home: {
     hero: {
-      title: "Domina tus operaciones hídricas con datos e IA",
+      title: "Domina la gestión de aguas municipales y de efluentes mineros e industriales con datos e IA",
       subtitle:
         "Convierte tus datos en decisiones inmediatas: menos desperdicio, más control y rendimiento sostenible, sin interrumpir tus operaciones actuales.",
       hosting: "Tus datos alojados en Quebec, en tus instalaciones.",
@@ -62,20 +62,20 @@ export const es: Translations = {
         {
           id: "eaux-municipales",
           label: "AGUA MUNICIPAL",
-          title: "Distribución eficiente, agua de calidad.",
-          desc: "Asegura una distribución eficiente y la calidad del agua con análisis en tiempo real, previniendo fugas y optimizando el tratamiento para las comunidades.",
+          title: "Tratamiento optimizado, costos e impacto controlados.",
+          desc: "Gestiona tus operaciones de tratamiento de agua en tiempo real para reducir los costos de productos químicos y energía, estabilizar los procesos y disminuir el impacto ambiental de tu planta municipal.",
         },
         {
           id: "mine",
           label: "MINERÍA",
-          title: "Extracción optimizada, impacto controlado.",
-          desc: "Optimiza la extracción y la gestión de recursos con modelos predictivos robustos, garantizando la seguridad operativa y reduciendo el impacto ambiental.",
+          title: "Refuerza tu vigilancia de conformidad con la Directiva 019.",
+          desc: "Supervisa en tiempo real la calidad de tus efluentes mineros y el cumplimiento de los umbrales regulatorios, especialmente para metales pesados: anticipa desviaciones, documenta el cumplimiento y reduce el riesgo ambiental.",
         },
         {
           id: "pate-et-papier",
           label: "PASTA Y PAPEL",
-          title: "Agua industrial bajo control.",
-          desc: "Reduce el consumo de agua y controla el tratamiento de efluentes con supervisión en tiempo real y mantenimiento predictivo de tus instalaciones.",
+          title: "Aguas de proceso guiadas, biodigestión reforzada.",
+          desc: "Gestiona las aguas procedentes de tus operaciones y optimiza la biodigestión de tus efluentes en tiempo real: estabiliza los procesos, mejora el rendimiento biológico y reduce los costos de tratamiento.",
         },
         {
           id: "agroalimentaire",

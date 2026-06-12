@@ -2,7 +2,7 @@ import type { Translations } from "../types";
 
 export const zh: Translations = {
   meta: {
-    homeTitle: "AquaPure Analytics — 掌控您的水务运营",
+    homeTitle: "AquaPure Analytics — 掌控市政用水与矿业及工业废水管理",
     homeDescription:
       "通过数据、人工智能和实时智能优化用水管理。降低成本，实现 ESG 目标。",
     digitalTwinTitle: "数字孪生 — AquaPure Analytics",
@@ -45,7 +45,7 @@ export const zh: Translations = {
   },
   home: {
     hero: {
-      title: "通过数据与 AI 掌控您的水务运营",
+      title: "通过数据与 AI 掌控市政用水与矿业及工业废水管理",
       subtitle:
         "将数据转化为即时决策：减少浪费、提升控制力、实现可持续绩效 — 无需扰乱现有运营。",
       hosting: "您的数据托管于魁北克，并在本地掌控。",
@@ -62,20 +62,20 @@ export const zh: Translations = {
         {
           id: "eaux-municipales",
           label: "市政用水",
-          title: "高效配水，优质用水。",
-          desc: "通过实时分析确保高效配水与水质，提前发现泄漏并优化处理，为社区服务。",
+          title: "优化处理，控制成本与环境影响。",
+          desc: "实时管理水处理运行，降低化学品与能源成本，稳定工艺流程，并减少市政水厂的环境足迹。",
         },
         {
           id: "mine",
           label: "采矿",
-          title: "提效开采，控制影响。",
-          desc: "通过稳健的预测模型优化采矿与资源管理，保障运营安全并降低环境影响。",
+          title: "强化 Directive 019 合规监测。",
+          desc: "实时监控矿山水水质及法规阈值，重点关注重金属：提前发现偏差，记录合规数据并降低环境风险。",
         },
         {
           id: "pate-et-papier",
           label: "纸浆与造纸",
-          title: "工业用水可控可管。",
-          desc: "通过实时监控与预测性维护减少用水并掌控废水处理流程。",
+          title: "工艺用水精控，生物消化增效。",
+          desc: "实时管理工艺用水并优化废水生物消化：稳定工艺流程，提高生物处理效率并降低处理成本。",
         },
         {
           id: "agroalimentaire",

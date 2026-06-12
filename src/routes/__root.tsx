@@ -57,10 +57,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Aquapure Analytics, Maîtrisez vos opérations hydriques" },
+      { title: "Aquapure Analytics — Maîtrisez la gestion des eaux municipales et effluents miniers et industriels" },
       { name: "description", content: "Optimisez la gestion de l'eau grâce à la donnée, l'IA et l'intelligence en temps réel. Réduisez vos coûts, atteignez vos objectifs ESG." },
       { property: "og:title", content: "Aquapure Analytics" },
-      { property: "og:description", content: "Maîtrisez vos opérations hydriques grâce à la donnée et l'IA." },
+      { property: "og:description", content: "Maîtrisez la gestion des eaux municipales et des effluents miniers et industriels grâce à la donnée et l'IA. Optimisez vos opérations, réduisez vos coûts et votre impact environnemental." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

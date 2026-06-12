@@ -2,7 +2,7 @@ import type { Translations } from "../types";
 
 export const fr: Translations = {
   meta: {
-    homeTitle: "Aquapure Analytics, Maîtrisez vos opérations hydriques",
+    homeTitle: "Aquapure Analytics — Maîtrisez la gestion des eaux municipales et effluents miniers et industriels",
     homeDescription:
       "Optimisez la gestion de l'eau grâce à la donnée, l'IA et l'intelligence en temps réel. Réduisez vos coûts, atteignez vos objectifs ESG.",
     digitalTwinTitle: "Jumeau numérique, Aquapure Analytics",
@@ -45,7 +45,7 @@ export const fr: Translations = {
   },
   home: {
     hero: {
-      title: "Maîtrisez vos opérations hydriques grâce à la donnée et l'IA",
+      title: "Maîtrisez la gestion des eaux municipales et des effluents miniers et industriels grâce à la donnée et l'IA",
       subtitle:
         "Transformez vos données en décisions immédiates : moins de gaspillage, plus de contrôle, et une performance durable, sans bouleverser vos opérations actuelles.",
       hosting: "Vos données sont hébergées au Québec, chez vous.",
@@ -62,20 +62,20 @@ export const fr: Translations = {
         {
           id: "eaux-municipales",
           label: "EAUX MUNICIPALES",
-          title: "Distribution efficace, eau de qualité.",
-          desc: "Assurez une distribution efficace et la qualité de l'eau grâce à l'analyse en temps réel, prévenant les fuites et optimisant le traitement pour les communautés.",
+          title: "Traitement optimisé, coûts et impact maîtrisés.",
+          desc: "Pilotez vos opérations de traitement d'eau en temps réel pour réduire les coûts de produits chimiques et d'énergie, stabiliser vos procédés et diminuer l'impact environnemental de votre station municipale.",
         },
         {
           id: "mine",
           label: "MINE",
-          title: "Extraction optimisée, impact maîtrisé.",
-          desc: "Optimisez l'extraction et la gestion des ressources avec des modèles prédictifs robustes, garantissant la sécurité opérationnelle et réduisant l'impact environnemental.",
+          title: "Renforcez votre veille de la conformité à la Directive 019.",
+          desc: "Surveillez en temps réel la qualité de vos effluents miniers et le respect des seuils réglementaires, notamment pour les métaux lourds : anticipez les écarts, documentez votre conformité et réduisez les risques environnementaux.",
         },
         {
           id: "pate-et-papier",
           label: "PÂTE ET PAPIER",
-          title: "Eau industrielle sous contrôle.",
-          desc: "Réduisez la consommation d'eau et maîtrisez le traitement des effluents grâce à une supervision en temps réel et une maintenance prédictive de vos installations.",
+          title: "Eaux de procédé pilotées, biodigestion renforcée.",
+          desc: "Pilotez la gestion des eaux issues de vos opérations et optimisez la biodigestion de vos effluents en temps réel : stabilisez vos procédés, améliorez le rendement biologique et réduisez vos coûts de traitement.",
         },
         {
           id: "agroalimentaire",
@@ -88,7 +88,7 @@ export const fr: Translations = {
     features: {
       title: "Fonctionnalités",
       ergonomic:
-        "L'interface est très ergonomique et pensée pour être très intuitive et facile à utiliser.",
+        "Nos interfaces sont très ergonomiques et pensées pour être très intuitives et faciles à utiliser.",
       body: "Nous déployons des systèmes interopérables branchés sur votre infrastructure actuelle, puis adaptons chaque module à vos besoins réels, pour que la technologie accélère vos opérations, sans les complexifier.",
       learnMore: "En savoir plus",
       items: [
@@ -206,7 +206,7 @@ export const fr: Translations = {
     },
   },
   digitalTwin: {
-    title: "Comment fonctionne notre plateforme de jumeau numérique ?",
+    title: "Comment fonctionnent nos plateformes de jumeau numérique ?",
     subtitle:
       "Découvrez comment AquaPure connecte vos bases de données et exploite un agent IA auto-hébergé pour automatiser vos procédés industriels et optimiser le contrôle en temps réel.",
     diagram: {

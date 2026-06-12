@@ -326,6 +326,52 @@ Una supervisión en tiempo real, correlacionada con tus procesos reales, cambia 
 
 Cada semana sin visibilidad continua acumula costos operativos y ambientales que no aparecen en tus paneles. La pregunta ya no es si necesitas más sensores, sino cómo convertir lo que ya mides en decisiones inmediatas.`,
     },
+    {
+      id: "seed-heavy-metals",
+      slug: "metales-pesados-prediccion-ia-sensores-mineria",
+      title: "Metales pesados en minería: por qué los sensores actuales no bastan — y cómo la IA cierra la brecha",
+      excerpt:
+        "Cobre, níquel, zinc: los resultados de laboratorio llegan tarde. Los gestores correlacionan turbidez y pH por regresión — AquaPure automatiza esa lógica con IA y sus sensores existentes.",
+      category: "Mine",
+      author: "Equipo AquaPure",
+      content: `<p><strong>Los metales pesados en efluentes mineros</strong> (cobre, níquel, zinc, plomo, hierro) están estrictamente regulados en Quebec, en particular bajo la <a href="https://www.environnement.gouv.qc.ca/mines/effluents/directive019.htm" rel="noopener noreferrer" target="_blank">Directiva 019</a>. El reto no es medirlos, sino verlos <em>a tiempo</em> para actuar.</p>
+
+<h2>Por qué el seguimiento en tiempo real falla</h2>
+
+<p>La mayoría de los sitios ya tienen sensores continuos: pH, turbidez, conductividad (EC), oxígeno disuelto (DO), carbono orgánico disuelto (DOC/DQO). Miden bien el proceso, pero no el cobre, el níquel ni el zinc directamente. La referencia sigue siendo el <strong>muestreo manual</strong> y el laboratorio acreditado — con 3 a 10 días de retraso.</p>
+
+<h2>Regresión y correlaciones: la práctica habitual</h2>
+
+<p>Los ingenieros construyen <strong>curvas de regresión</strong> entre parámetros fáciles de medir y resultados de metales. La turbidité se correlaciona con Cu y Fe; el pH con la solubilidad de Ni y Zn; el DOC y el DO con la complejación y el redox.</p>
+
+<figure>
+<img src="/blog/article-regression-loupe.png" alt="Lupa sobre un gráfico de regresión que ilustra la correlación entre variables de proceso y metales pesados" width="800" height="450" loading="lazy" />
+<figcaption>La regresión manual es habitual, pero difícil de mantener al ritmo operativo.</figcaption>
+</figure>
+
+<h2>Cinco metales prioritarios</h2>
+
+<ul>
+<li><strong>Cobre (Cu)</strong> — flotación y relaves</li>
+<li><strong>Níquel (Ni)</strong> — minas Ni-Cu</li>
+<li><strong>Zinc (Zn)</strong> — drenaje ácido y neutralización</li>
+<li><strong>Plomo (Pb)</strong> — yacimientos polimetálicos</li>
+<li><strong>Hierro (Fe)</strong> — precipitación y transporte coloidal</li>
+</ul>
+
+<h2>Cómo AquaPure predice metales con IA</h2>
+
+<p>AquaPure entrena modelos de <strong>inteligencia artificial</strong> con el historial de sus sensores y análisis de laboratorio para estimar Cu, Ni, Zn, Pb y Fe en continuo — sin nuevas sondas metálicas.</p>
+
+<h2>Menos costos y menos estrés en inspecciones</h2>
+
+<p>Cada análisis acreditado cuesta entre 80 $ y 250 $ CAD. La predicción continua concentra los muestreos donde hay riesgo y prepara a los equipos ante visitas del ministerio de medio ambiente de Quebec (MELCCFP).</p>
+
+<h3>¿La IA reemplaza el laboratorio acreditado?</h3>
+<p>No. Complementa la vigilancia reglamentaria entre dos muestreos oficiales.</p>
+
+<p><em>Última actualización: junio de 2026.</em></p>`,
+    },
   ],
 };
 

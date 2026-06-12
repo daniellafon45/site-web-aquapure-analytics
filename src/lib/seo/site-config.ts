@@ -15,6 +15,7 @@ export const PUBLIC_PATHS = [
   "/blogue",
   "/blogue/eau-procede-mine-optimiser-sans-compromettre",
   "/blogue/station-depuration-pilotage-temps-reel",
+  "/blogue/metaux-lourds-prediction-ia-capteurs-mine",
 ] as const;
 
 export function absoluteUrl(path: string): string {

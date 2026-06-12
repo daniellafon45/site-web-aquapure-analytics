@@ -32,17 +32,17 @@ export function SiteFooter() {
           </ul>
         </div>
         <div className="col-span-2 md:col-span-1 flex flex-col items-start md:items-end gap-4">
-          <div className="rounded-lg bg-white px-3 py-2">
-            <Logo className="h-7 w-auto" />
+          <div className="rounded-lg bg-white px-4 py-3">
+            <Logo className="h-11 sm:h-12 w-auto" />
           </div>
           <a
             href="https://www.linkedin.com/company/aquapure-analytics/?viewAsMember=true"
             target="_blank"
             rel="noopener noreferrer"
             aria-label={t.footer.linkedInAria}
-            className="size-8 grid place-items-center rounded-md hover:bg-white/10"
+            className="size-12 grid place-items-center rounded-md hover:bg-white/10"
           >
-            <Linkedin className="size-4" />
+            <Linkedin className="size-7" />
           </a>
         </div>
       </div>

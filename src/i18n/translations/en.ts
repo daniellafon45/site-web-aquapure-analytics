@@ -326,6 +326,87 @@ Real-time supervision correlated to your actual processes changes team posture. 
 
 Every week without continuous visibility accrues operational and environmental costs that don’t appear in your dashboards. The question is no longer whether you need more sensors; it’s how to turn what you already measure into immediate decisions.`,
     },
+    {
+      id: "seed-heavy-metals",
+      slug: "heavy-metals-ai-sensor-prediction-mining",
+      title: "Heavy metals in mining: why your sensors fall short — and how AI closes the gap",
+      excerpt:
+        "Copper, nickel, zinc: lab results arrive too late. Site managers correlate turbidity and pH by regression — AquaPure automates that logic with AI and your existing sensors.",
+      category: "Mine",
+      author: "AquaPure Team",
+      content: `<p><strong>Heavy metals in mine effluent</strong> are trace elements (copper, nickel, zinc, lead, iron) whose discharge limits are tightly regulated in Quebec, notably under <a href="https://www.environnement.gouv.qc.ca/mines/effluents/directive019.htm" rel="noopener noreferrer" target="_blank">Directive 019</a>. The challenge is not whether to measure them — it is seeing concentrations <em>in time</em> to act.</p>
+
+<h2>Why heavy-metal monitoring remains a blind spot</h2>
+
+<p>Most mining sites already run continuous sensors: pH, turbidity, conductivity (EC), dissolved oxygen (DO), dissolved organic carbon (DOC/COD). These instruments excel at process control. They do not directly measure copper, nickel, or zinc.</p>
+
+<p>For heavy metals, the reference remains <strong>manual sampling</strong> followed by accredited lab analysis. Typical turnaround: 3 to 10 business days between collection and results. In that window, thousands of cubic meters may be discharged or recycled without anyone knowing the actual Cu or Ni concentration.</p>
+
+<h2>What teams already do: regression and correlations</h2>
+
+<p>Environmental engineers build <strong>regression curves</strong> linking easy-to-measure parameters to lab metal results. Turbidity often tracks colloidal fractions carrying copper and iron. pH affects metal hydroxide solubility. DOC and DO influence complexation and redox behaviour.</p>
+
+<figure>
+<img src="/blog/article-regression-loupe.png" alt="Magnifying glass over a regression chart showing correlation between process variables and heavy metal concentrations" width="800" height="450" loading="lazy" />
+<figcaption>Manual regression between turbidity, pH, or DOC and heavy metals is common — but it struggles to keep pace with operations.</figcaption>
+</figure>
+
+<h2>Correlated variables vs target metals in mining</h2>
+
+<table>
+<thead><tr><th>Continuous sensor</th><th>Often correlated metal(s)</th><th>Limit of manual approach</th></tr></thead>
+<tbody>
+<tr><td>Turbidity</td><td>Cu, Fe, Zn (particulate phase)</td><td>Seasonal drift missed</td></tr>
+<tr><td>pH</td><td>Cu, Ni, Zn (solubility)</td><td>Non-linear process effects</td></tr>
+<tr><td>DOC / COD</td><td>Cu, Ni (complexation)</td><td>Changing water matrix</td></tr>
+<tr><td>DO</td><td>Fe, other redox metals</td><td>Lag between measure and impact</td></tr>
+<tr><td>Conductivity (EC)</td><td>Overall ionic load indicator</td><td>Low metal specificity</td></tr>
+</tbody>
+</table>
+
+<h2>Five priority metals for Quebec mining</h2>
+
+<ul>
+<li><strong>Copper (Cu)</strong> — flotation circuits and tailings</li>
+<li><strong>Nickel (Ni)</strong> — Ni-Cu mines and concentration effluent</li>
+<li><strong>Zinc (Zn)</strong> — acid mine drainage and neutralization</li>
+<li><strong>Lead (Pb)</strong> — polymetallic deposits</li>
+<li><strong>Iron (Fe)</strong> — precipitation and colloidal transport indicator</li>
+</ul>
+
+<h2>How AquaPure turns your sensors into metal predictors</h2>
+
+<p>AquaPure Analytics applies <strong>AI models</strong> trained on <em>your</em> sensor history and <em>your</em> lab results. Instead of buying new metal probes, the platform uses pH, turbidity, DOC, DO, and conductivity to estimate Cu, Ni, Zn, Pb, and Fe continuously.</p>
+
+<ol>
+<li><strong>Initial calibration</strong> — cross sensor series with lab analyses over a representative period</li>
+<li><strong>Real-time prediction</strong> — estimated metal concentrations at each sensor timestep</li>
+<li><strong>Pre-threshold alerts</strong> — notification when trajectories approach regulatory limits</li>
+<li><strong>Auditable reports</strong> — traceability for inspections and MELCCFP reporting</li>
+</ol>
+
+<h2>Lower costs, less stress during MELCCFP inspections</h2>
+
+<p>Accredited multi-metal lab analyses often cost CAD 80–250 per sample. Multiply by weekly sampling across multiple points and the line item quickly reaches tens of thousands per year — before field time.</p>
+
+<p>Continuous prediction does not replace required reference analyses. It <strong>focuses sampling</strong> where the model flags risk and helps teams answer when Quebec's environment ministry asks what happened between two official samples.</p>
+
+<h2>Frequently asked questions</h2>
+
+<h3>Can pH and turbidity sensors really predict copper?</h3>
+<p>Yes, when a stable statistical link exists between process parameters and lab results — the same logic your engineers already use in regression, industrialized and updated continuously by AI.</p>
+
+<h3>Does AI prediction replace accredited lab analysis?</h3>
+<p>No. It complements regulatory monitoring with visibility between official samples and targeted lab campaigns.</p>
+
+<h3>Which sensors does AquaPure use?</h3>
+<p>Those already on site: pH, turbidity, conductivity, dissolved oxygen (DO), dissolved organic carbon (DOC/COD), and other process signals from SCADA or API.</p>
+
+<h3>How many metals does the platform predict?</h3>
+<p>Five priority metals in Quebec mining: copper (Cu), nickel (Ni), zinc (Zn), lead (Pb), and iron (Fe).</p>
+
+<p><em>Last updated: June 2026.</em></p>`,
+    },
   ],
 };
 

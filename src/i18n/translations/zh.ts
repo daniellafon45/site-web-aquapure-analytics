@@ -326,6 +326,49 @@ export const zh: Translations = {
 
 每周缺乏持续可视性，都会累积出在仪表盘上看不见的运营与环境成本。问题不再是是否需要更多传感器，而是如何把已有测量转化为即时决策。`,
     },
+    {
+      id: "seed-heavy-metals",
+      slug: "zhongjinshu-ai-chuanganqi-yuce-kuangshan",
+      title: "矿山重金属：现有传感器为何不够——AI 如何弥补监测空白",
+      excerpt:
+        "铜、镍、锌：实验室结果往往滞后。现场管理者用浊度、pH 等做回归相关——AquaPure 用 AI 与现有传感器将这一逻辑自动化。",
+      category: "Mine",
+      author: "AquaPure 团队",
+      content: `<p><strong>矿山废水中的重金属</strong>（铜、镍、锌、铅、铁）在魁北克受严格监管，尤其是<a href="https://www.environnement.gouv.qc.ca/mines/effluents/directive019.htm" rel="noopener noreferrer" target="_blank">第 019 号指令</a>。难点不在于要不要测，而在于能否<em>及时</em>掌握浓度并采取行动。</p>
+
+<h2>实时监测的盲区</h2>
+
+<p>多数矿山已部署连续传感器：pH、浊度、电导率（EC）、溶解氧（DO）、溶解有机碳（DOC/COD）。它们擅长过程控制，却无法直接测量铜、镍、锌。重金属仍依赖<strong>人工取样</strong>与认可实验室，通常需 3 至 10 个工作日。</p>
+
+<h2>回归与相关：行业常见做法</h2>
+
+<p>工程师建立<strong>回归曲线</strong>，将易测参数与实验室金属结果关联。浊度常与 Cu、Fe 相关；pH 影响 Ni、Zn 溶解度；DOC 与 DO 影响络合与氧化还原。</p>
+
+<figure>
+<img src="/blog/article-regression-loupe.png" alt="放大镜下的回归图表，展示过程变量与重金属浓度之间的相关性" width="800" height="450" loading="lazy" />
+<figcaption>人工回归很常见，但难以跟上运营节奏。</figcaption>
+</figure>
+
+<h2>魁北克矿山五种优先金属</h2>
+
+<ul>
+<li><strong>铜（Cu）</strong> — 浮选与尾矿</li>
+<li><strong>镍（Ni）</strong> — 镍铜矿与选矿废水</li>
+<li><strong>锌（Zn）</strong> — 酸性矿山排水与中和</li>
+<li><strong>铅（Pb）</strong> — 多金属矿床</li>
+<li><strong>铁（Fe）</strong> — 沉淀与胶体运移指标</li>
+</ul>
+
+<h2>AquaPure 如何用 AI 预测金属浓度</h2>
+
+<p>AquaPure 用<strong>人工智能模型</strong>，结合现场传感器历史与实验室数据，连续估算 Cu、Ni、Zn、Pb、Fe，无需新增金属探头。</p>
+
+<h2>降低成本，减轻魁北克环境部检查压力</h2>
+
+<p>认可实验室单项分析约 80–250 加元。连续预测不取代法规要求的参考分析，但能在两次正式取样之间提供可见性，并在 MELCCFP 突击检查时拿出可审计的轨迹。</p>
+
+<p><em>最后更新：2026 年 6 月。</em></p>`,
+    },
   ],
 };
 

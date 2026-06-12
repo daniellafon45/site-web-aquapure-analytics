@@ -1,3 +1,4 @@
+import coverHeavyMetals from "@/assets/blog/article-metaux-lourds.png";
 import coverMine from "@/assets/blog/article-mine.png";
 import coverStation from "@/assets/blog/article-station-depuration.png";
 import { getTranslations } from "@/i18n/translations";
@@ -7,16 +8,19 @@ import type { BlogPost } from "./types";
 const COVERS: Record<string, string> = {
   "seed-mine": coverMine,
   "seed-municipal": coverStation,
+  "seed-heavy-metals": coverHeavyMetals,
 };
 
 const DATES: Record<string, string> = {
   "seed-mine": "2026-06-01",
   "seed-municipal": "2026-05-20",
+  "seed-heavy-metals": "2026-06-12",
 };
 
 const READ_MINUTES: Record<string, number> = {
   "seed-mine": 6,
   "seed-municipal": 5,
+  "seed-heavy-metals": 9,
 };
 
 export function getSeedPostsForLocale(locale: Locale): BlogPost[] {

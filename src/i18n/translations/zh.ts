@@ -192,7 +192,7 @@ export const zh: Translations = {
       submitting: "发送中…",
       successTitle: "请求已成功提交",
       successBody:
-        "AquaPure 团队成员将审核您的需求，并在一至两个工作日内与您联系，安排一次针对您水务运营的深入讨论。",
+        "AquaPure 团队成员将审核您的需求，并在一至两个工作日内与您联系，安排一次针对您运营的深入讨论。",
       honeypot: "请勿填写",
       errors: {
         lastName: "姓氏为必填项。",

@@ -192,7 +192,7 @@ export const en: Translations = {
       submitting: "Submitting…",
       successTitle: "Request submitted successfully",
       successBody:
-        "A member of the AquaPure team will review your request and contact you within one to two business days to schedule a focused discussion about your water operations.",
+        "A member of the AquaPure team will review your request and contact you within one to two business days to schedule a focused discussion about your operations.",
       honeypot: "Do not fill",
       errors: {
         lastName: "Last name is required.",

@@ -192,7 +192,7 @@ export const fr: Translations = {
       submitting: "Envoi en cours…",
       successTitle: "Demande enregistrée avec succès",
       successBody:
-        "Un membre de l'équipe AquaPure analysera votre besoin et vous contactera d'ici un à deux jours ouvrables pour convenir d'un échange ciblé sur vos opérations hydriques.",
+        "Un membre de l'équipe AquaPure analysera votre besoin et vous contactera d'ici un à deux jours ouvrables pour convenir d'un échange ciblé sur vos opérations.",
       honeypot: "Ne pas remplir",
       errors: {
         lastName: "Le nom est requis.",

@@ -192,7 +192,7 @@ export const es: Translations = {
       submitting: "Enviando…",
       successTitle: "Solicitud enviada con éxito",
       successBody:
-        "Un miembro del equipo de AquaPure analizará tu solicitud y se pondrá en contacto contigo en uno o dos días hábiles para concertar una conversación focalizada sobre tus operaciones hídricas.",
+        "Un miembro del equipo de AquaPure analizará tu solicitud y se pondrá en contacto contigo en uno o dos días hábiles para concertar una conversación focalizada sobre tus operaciones.",
       honeypot: "No completar",
       errors: {
         lastName: "El apellido es obligatorio.",

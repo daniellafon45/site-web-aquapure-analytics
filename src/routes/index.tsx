@@ -129,24 +129,28 @@ function Hero() {
 function Industries() {
   const items = [
     {
+      id: "eaux-municipales",
       img: indWater,
       label: "EAUX MUNICIPALES",
       title: "Distribution efficace, eau de qualité.",
       desc: "Assurez une distribution efficace et la qualité de l'eau grâce à l'analyse en temps réel, prévenant les fuites et optimisant le traitement pour les communautés.",
     },
     {
+      id: "mine",
       img: indMine,
       label: "MINE",
       title: "Extraction optimisée, impact maîtrisé.",
       desc: "Optimisez l'extraction et la gestion des ressources avec des modèles prédictifs robustes, garantissant la sécurité opérationnelle et réduisant l'impact environnemental.",
     },
     {
+      id: "pate-et-papier",
       img: indPaper,
       label: "PÂTE ET PAPIER",
       title: "Eau industrielle sous contrôle.",
       desc: "Réduisez la consommation d'eau et maîtrisez le traitement des effluents grâce à une supervision en temps réel et une maintenance prédictive de vos installations.",
     },
     {
+      id: "agroalimentaire",
       img: indAgro,
       label: "AGRO ALIMENTAIRE",
       title: "Qualité et conformité, en continu.",
@@ -170,11 +174,14 @@ function Industries() {
             </p>
           </div>
         </Reveal>
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
           {items.map((it, i) => (
-            <Reveal key={i} delay={i * 100}>
-              <article className="group overflow-hidden rounded-2xl border border-border/60 bg-card hover-lift">
-                <div className="relative aspect-[16/10] overflow-hidden">
+            <Reveal key={it.id} delay={i * 100} className="h-full">
+              <article
+                id={it.id}
+                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border/60 bg-card hover-lift scroll-mt-28 sm:scroll-mt-32"
+              >
+                <div className="relative aspect-[16/10] shrink-0 overflow-hidden">
                   <img
                     src={it.img}
                     alt={it.label}
@@ -196,9 +203,13 @@ function Industries() {
                     {it.label}
                   </span>
                 </div>
-                <div className="p-6 lg:p-8">
-                  <h3 className="text-xl md:text-2xl font-bold text-navy leading-snug">{it.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{it.desc}</p>
+                <div className="flex flex-1 flex-col p-6 lg:p-8">
+                  <h3 className="min-h-[3.25rem] md:min-h-[3.5rem] text-xl md:text-2xl font-bold text-navy leading-snug">
+                    {it.title}
+                  </h3>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground min-h-[4.5rem] lg:min-h-[5rem]">
+                    {it.desc}
+                  </p>
                 </div>
               </article>
             </Reveal>

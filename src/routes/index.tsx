@@ -394,12 +394,33 @@ function Features() {
   );
 }
 
-function StatCircle({ color, children }: { color: string; children: React.ReactNode }) {
+function StatCircle({
+  color,
+  progress,
+  children,
+}: {
+  color: string;
+  progress: number;
+  children: React.ReactNode;
+}) {
+  const radius = 26;
+  const circumference = 2 * Math.PI * radius;
+  const dash = (Math.min(100, Math.max(0, progress)) / 100) * circumference;
+
   return (
     <div className="relative size-14 shrink-0">
       <svg viewBox="0 0 60 60" className="size-full -rotate-90">
-        <circle cx="30" cy="30" r="26" stroke="oklch(0.92 0.01 255)" strokeWidth="4" fill="none"/>
-        <circle cx="30" cy="30" r="26" stroke={color} strokeWidth="4" fill="none" strokeDasharray="120 200" strokeLinecap="round"/>
+        <circle cx="30" cy="30" r={radius} stroke="oklch(0.92 0.01 255)" strokeWidth="4" fill="none"/>
+        <circle
+          cx="30"
+          cy="30"
+          r={radius}
+          stroke={color}
+          strokeWidth="4"
+          fill="none"
+          strokeDasharray={`${dash} ${circumference}`}
+          strokeLinecap="round"
+        />
       </svg>
       <div className="absolute inset-0 grid place-items-center">{children}</div>
     </div>
@@ -421,20 +442,20 @@ function Stats() {
     },
     {
       icon: (
-        <StatCircle color="oklch(0.75 0.16 70)">
+        <StatCircle color="oklch(0.75 0.16 70)" progress={18}>
           <Zap className="size-5 text-yellow-500 fill-yellow-500"/>
         </StatCircle>
       ),
-      value: "-30%",
+      value: "-18%",
       label: "Réduction mesurable de votre consommation énergétique",
     },
     {
       icon: (
-        <StatCircle color="oklch(0.7 0.15 160)">
+        <StatCircle color="oklch(0.7 0.15 160)" progress={30}>
           <span className="text-[10px] font-bold text-emerald-700">CO<sub>2</sub></span>
         </StatCircle>
       ),
-      value: "-40%",
+      value: "-30%",
       label: "Diminution concrète de votre empreinte carbone",
     },
   ];

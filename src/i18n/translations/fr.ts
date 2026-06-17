@@ -2,9 +2,9 @@ import type { Translations } from "../types";
 
 export const fr: Translations = {
   meta: {
-    homeTitle: "AquaPure Analytics — Maîtrisez la gestion des eaux municipales et effluents miniers et industriels",
+    homeTitle: "AquaPure Analytics — Réduisez vos coûts de traitement d'effluents",
     homeDescription:
-      "AquaPure Analytics optimise la gestion des eaux municipales et des effluents miniers et industriels grâce à la donnée, l'IA et l'analyse en temps réel au Québec.",
+      "Chimie, énergie, analyses labo : pilotez vos effluents en temps réel avec vos capteurs et l'IA. Données hébergées au Québec.",
     digitalTwinTitle: "Jumeau numérique, Aquapure Analytics",
     digitalTwinDescription:
       "Découvrez comment AquaPure connecte vos bases de données et exploite un agent IA auto-hébergé pour automatiser vos procédés industriels et optimiser le contrôle en temps réel.",
@@ -35,6 +35,7 @@ export const fr: Translations = {
     sectorsTitle: "Secteurs d'activité",
     companyTitle: "Entreprise",
     blog: "Blogue",
+    privacy: "Politique de confidentialité",
     linkedInAria: "AquaPure Analytics sur LinkedIn",
     sectors: [
       { label: "Eaux municipales", href: "/#eaux-municipales" },
@@ -43,13 +44,21 @@ export const fr: Translations = {
       { label: "Agroalimentaire", href: "/#agroalimentaire" },
     ],
   },
+  consent: {
+    ariaLabel: "Consentement à la collecte de données",
+    message:
+      "Nous utilisons des témoins essentiels pour mémoriser vos préférences et pouvons activer des outils d'analyse uniquement avec votre consentement, conformément à la Loi 25 et à la LPRPDE.",
+    accept: "Accepter",
+    reject: "Refuser",
+    learnMore: "Politique de confidentialité",
+  },
   home: {
     hero: {
-      title: "Maîtrisez la gestion des eaux municipales et des effluents miniers et industriels grâce à la donnée et l'IA",
+      title: "Réduisez vos coûts de traitement d'effluents, avant que la facture ne s'accumule",
       subtitle:
         "Transformez vos données en décisions immédiates : moins de gaspillage, plus de contrôle, et une performance durable, sans bouleverser vos opérations actuelles.",
-      hosting: "Vos données sont hébergées au Québec, chez vous.",
-      contact: "Nous contacter",
+      hosting: "Vos données restent au Québec, hébergées chez vous.",
+      contact: "Voir comment réduire vos coûts",
       demo: "Demander une démo",
     },
     industries: {
@@ -126,7 +135,7 @@ export const fr: Translations = {
         },
         {
           id: "mission-scoot",
-          label: "Mission Scoot",
+          label: "Mission Scout",
           category: "Collaboration",
           title: "Missions terrain",
           description:
@@ -194,6 +203,9 @@ export const fr: Translations = {
       successBody:
         "Un membre de l'équipe AquaPure analysera votre besoin et vous contactera d'ici un à deux jours ouvrables pour convenir d'un échange ciblé sur vos opérations.",
       honeypot: "Ne pas remplir",
+      privacyConsentBefore: "J'accepte que mes renseignements soient traités conformément à la ",
+      privacyConsentLink: "politique de confidentialité",
+      privacyConsentAfter: ".",
       errors: {
         lastName: "Le nom est requis.",
         firstName: "Le prénom est requis.",
@@ -202,6 +214,7 @@ export const fr: Translations = {
         message: "Décrivez votre besoin.",
         messageTooLong: "Le message ne peut pas dépasser 5000 caractères.",
         emailTooLong: "Le courriel est trop long.",
+        consentRequired: "Vous devez accepter la politique de confidentialité pour envoyer votre demande.",
       },
     },
   },
@@ -280,6 +293,12 @@ export const fr: Translations = {
     requestDemo: "Demander une démo",
     digitalTwin: "Jumeau numérique",
     articleTitleSuffix: "Blogue AquaPure",
+    relatedAria: "Articles connexes et pages du site",
+    relatedTitle: "Autres articles publiés",
+    seeAlso: "Voir aussi :",
+    and: "et",
+    allArticles: "Tous les articles",
+    privacyPolicy: "Politique de confidentialité",
   },
   categories: {
     "Eaux municipales": "Eaux municipales",
@@ -404,6 +423,8 @@ Chaque semaine sans visibilité continue, ce sont des coûts opérationnels et e
 <blockquote>Quand un inspecteur demande « qu'avez-vous fait entre le prélèvement du 3 et le dépassement du 12 ? », une courbe de prédiction horaire vaut mieux qu'une supposition.</blockquote>
 
 <p>Les équipes passent moins de nuits à reconstituer l'historique dans Excel et plus de temps à corriger la cause — dosage de chaux, recirculation, arrêt temporaire d'une ligne de rejet.</p>
+
+<p>Pour aller plus loin sur le pilotage hydrique : <a href="/blogue/eau-procede-mine-optimiser-sans-compromettre" rel="noopener noreferrer">eau de procédé en mine</a> et <a href="/blogue/station-depuration-pilotage-temps-reel" rel="noopener noreferrer">station de dépuration en temps réel</a>.</p>
 
 <h2>Questions fréquentes</h2>
 

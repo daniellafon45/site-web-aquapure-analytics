@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { SiteFooter } from "@/components/site/footer";
 import { SiteNav } from "@/components/site/nav";
 import { BlogContent } from "@/components/blog/blog-content";
+import { BlogArticleLinks } from "@/components/blog/blog-article-links";
 import { getPostBySlug, getSeedPosts, getPostById } from "@/lib/blog/store";
 import type { BlogPost } from "@/lib/blog/types";
 import { useLocale } from "@/i18n/context";
@@ -110,6 +111,8 @@ function BlogArticlePage() {
           <p className="mt-5 text-lg text-muted-foreground leading-relaxed border-l-4 border-primary/30 pl-5">{post.excerpt}</p>
 
           <BlogContent content={post.content} />
+
+          <BlogArticleLinks currentPostId={post.id} />
 
           <div className="mt-14 rounded-2xl bg-soft border border-border/60 p-8 text-center max-w-3xl">
             <h2 className="text-lg font-bold text-navy">{t.blog.articleCtaTitle}</h2>

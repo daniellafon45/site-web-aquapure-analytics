@@ -12,6 +12,7 @@
 - Jumeau numérique : https://aquapure-analytics.com/jumeau-numerique
 - Blogue : https://aquapure-analytics.com/blogue
 - Métaux lourds en mine (IA + capteurs) : https://aquapure-analytics.com/blogue/metaux-lourds-prediction-ia-capteurs-mine
+- Politique de confidentialité : https://aquapure-analytics.com/confidentialite
 
 ## Secteurs
 

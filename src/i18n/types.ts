@@ -91,8 +91,16 @@ export type Translations = {
     sectorsTitle: string;
     companyTitle: string;
     blog: string;
+    privacy: string;
     linkedInAria: string;
     sectors: { label: string; href: string }[];
+  };
+  consent: {
+    ariaLabel: string;
+    message: string;
+    accept: string;
+    reject: string;
+    learnMore: string;
   };
   home: {
     hero: {
@@ -147,6 +155,9 @@ export type Translations = {
       successTitle: string;
       successBody: string;
       honeypot: string;
+      privacyConsentBefore: string;
+      privacyConsentLink: string;
+      privacyConsentAfter: string;
       errors: {
         lastName: string;
         firstName: string;
@@ -155,6 +166,7 @@ export type Translations = {
         message: string;
         messageTooLong: string;
         emailTooLong: string;
+        consentRequired: string;
       };
     };
   };
@@ -202,6 +214,12 @@ export type Translations = {
     requestDemo: string;
     digitalTwin: string;
     articleTitleSuffix: string;
+    relatedAria: string;
+    relatedTitle: string;
+    seeAlso: string;
+    and: string;
+    allArticles: string;
+    privacyPolicy: string;
   };
   categories: Record<string, string>;
   seedPosts: SeedPostTranslation[];

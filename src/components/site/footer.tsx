@@ -29,6 +29,11 @@ export function SiteFooter() {
                 {t.footer.blog}
               </Link>
             </li>
+            <li>
+              <Link to="/confidentialite" className="hover:text-white transition-colors">
+                {t.footer.privacy}
+              </Link>
+            </li>
           </ul>
         </div>
         <div className="col-span-2 md:col-span-1 flex flex-col items-start md:items-end gap-4">

@@ -89,6 +89,51 @@ export function deleteCustomPost(id: string) {
   writeCustomPosts(filtered);
 }
 
+export function updateCustomPost(
+  id: string,
+  input: Omit<BlogPost, "id" | "slug" | "readMinutes"> & { slug?: string },
+): BlogPost {
+  const existing = readCustomPosts();
+  const index = existing.findIndex((p) => p.id === id);
+  if (index === -1) {
+    throw new Error("Article introuvable.");
+  }
+
+  const slug = input.slug?.trim() || slugify(input.title);
+  const words = contentToPlainText(input.content).split(/\s+/).filter(Boolean).length;
+  const post: BlogPost = {
+    id,
+    slug,
+    title: input.title.trim(),
+    excerpt: input.excerpt.trim(),
+    content: input.content.trim(),
+    coverImage: input.coverImage.trim(),
+    category: input.category,
+    author: input.author.trim() || "Équipe AquaPure",
+    publishedAt: input.publishedAt,
+    readMinutes: Math.max(1, Math.ceil(words / 200)),
+  };
+
+  const allSeedSlugs = new Set(
+    (["fr", "en", "zh", "es"] as Locale[]).flatMap((l) =>
+      getSeedPostsForLocale(l).map((p) => p.slug),
+    ),
+  );
+  const slugTaken = existing.some((p) => p.slug === post.slug && p.id !== id);
+  if (slugTaken || allSeedSlugs.has(post.slug)) {
+    throw new Error("Un article avec ce slug existe déjà.");
+  }
+
+  const updated = [...existing];
+  updated[index] = post;
+  writeCustomPosts(updated);
+  return post;
+}
+
+export function isCustomPost(id: string): boolean {
+  return id.startsWith("custom-");
+}
+
 export function estimateReadMinutes(content: string): number {
   const words = contentToPlainText(content).split(/\s+/).filter(Boolean).length;
   return Math.max(1, Math.ceil(words / 200));

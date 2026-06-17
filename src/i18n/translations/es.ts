@@ -2,9 +2,9 @@ import type { Translations } from "../types";
 
 export const es: Translations = {
   meta: {
-    homeTitle: "AquaPure Analytics — Domina la gestión de aguas municipales y efluentes mineros e industriales",
+    homeTitle: "AquaPure Analytics — Reduzca sus costos de tratamiento de efluentes",
     homeDescription:
-      "Optimiza la gestión del agua con datos, IA e inteligencia en tiempo real. Reduce costos y alcanza tus metas ESG.",
+      "Químicos, energía, análisis de laboratorio: gestione sus efluentes en tiempo real con sus sensores e IA. Datos alojados en Quebec.",
     digitalTwinTitle: "Gemelo digital — AquaPure Analytics",
     digitalTwinDescription:
       "Descubre cómo AquaPure conecta tus bases de datos y utiliza un agente de IA autoalojado para automatizar procesos industriales y optimizar el control en tiempo real.",
@@ -35,6 +35,7 @@ export const es: Translations = {
     sectorsTitle: "Sectores industriales",
     companyTitle: "Empresa",
     blog: "Blog",
+    privacy: "Política de privacidad",
     linkedInAria: "AquaPure Analytics en LinkedIn",
     sectors: [
       { label: "Agua municipal", href: "/#eaux-municipales" },
@@ -43,13 +44,21 @@ export const es: Translations = {
       { label: "Alimentos y bebidas", href: "/#agroalimentaire" },
     ],
   },
+  consent: {
+    ariaLabel: "Consentimiento para la recopilación de datos",
+    message:
+      "Utilizamos cookies esenciales para recordar sus preferencias y solo activamos herramientas de análisis con su consentimiento, conforme a la Ley 25 de Quebec y la LPRPDE.",
+    accept: "Aceptar",
+    reject: "Rechazar",
+    learnMore: "Política de privacidad",
+  },
   home: {
     hero: {
-      title: "Domina la gestión de aguas municipales y de efluentes mineros e industriales con datos e IA",
+      title: "Reduzca sus costos de tratamiento de efluentes, antes de que la factura se acumule",
       subtitle:
         "Convierte tus datos en decisiones inmediatas: menos desperdicio, más control y rendimiento sostenible, sin interrumpir tus operaciones actuales.",
-      hosting: "Tus datos alojados en Quebec, en tus instalaciones.",
-      contact: "Contáctanos",
+      hosting: "Sus datos permanecen en Quebec, alojados en sus instalaciones.",
+      contact: "Vea cómo reducir sus costos",
       demo: "Solicitar demo",
     },
     industries: {
@@ -194,6 +203,9 @@ export const es: Translations = {
       successBody:
         "Un miembro del equipo de AquaPure analizará tu solicitud y se pondrá en contacto contigo en uno o dos días hábiles para concertar una conversación focalizada sobre tus operaciones.",
       honeypot: "No completar",
+      privacyConsentBefore: "Acepto que mis datos sean tratados conforme a la ",
+      privacyConsentLink: "política de privacidad",
+      privacyConsentAfter: ".",
       errors: {
         lastName: "El apellido es obligatorio.",
         firstName: "El nombre es obligatorio.",
@@ -202,6 +214,7 @@ export const es: Translations = {
         message: "Describe tu necesidad.",
         messageTooLong: "El mensaje no puede exceder 5000 caracteres.",
         emailTooLong: "El correo es demasiado largo.",
+        consentRequired: "Debe aceptar la política de privacidad para enviar su solicitud.",
       },
     },
   },
@@ -280,6 +293,12 @@ export const es: Translations = {
     requestDemo: "Solicitar demo",
     digitalTwin: "Gemelo digital",
     articleTitleSuffix: "Blog AquaPure",
+    relatedAria: "Artículos relacionados y páginas del sitio",
+    relatedTitle: "Otros artículos publicados",
+    seeAlso: "Ver también:",
+    and: "y",
+    allArticles: "Todos los artículos",
+    privacyPolicy: "Política de privacidad",
   },
   categories: {
     "Eaux municipales": "Agua municipal",
@@ -369,6 +388,8 @@ Cada semana sin visibilidad continua acumula costos operativos y ambientales que
 
 <h3>¿La IA reemplaza el laboratorio acreditado?</h3>
 <p>No. Complementa la vigilancia reglamentaria entre dos muestreos oficiales.</p>
+
+<p>Para profundizar: <a href="/blogue/agua-proceso-mineria-optimizar-sin-comprometer-cumplimiento" rel="noopener noreferrer">agua de proceso en minería</a> y <a href="/blogue/planta-depuracion-control-tiempo-real" rel="noopener noreferrer">control en tiempo real de planta de depuración</a>.</p>
 
 <p><em>Última actualización: junio de 2026.</em></p>`,
     },

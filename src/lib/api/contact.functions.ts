@@ -28,6 +28,7 @@ const contactSchema = z.object({
     .transform((value) => normalizeWebsite(value))
     .optional(),
   message: z.string().trim().min(1, "Décrivez votre besoin.").max(5000, "Message trop long."),
+  consent: z.literal(true, { errorMap: () => ({ message: "Consentement requis." }) }),
   botField: z.string().optional(),
 });
 

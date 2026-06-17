@@ -2,9 +2,9 @@ import type { Translations } from "../types";
 
 export const zh: Translations = {
   meta: {
-    homeTitle: "AquaPure Analytics — 掌控市政用水与矿业及工业废水管理",
+    homeTitle: "AquaPure Analytics — 降低废水处理成本",
     homeDescription:
-      "通过数据、人工智能和实时智能优化用水管理。降低成本，实现 ESG 目标。",
+      "化学品、能源、实验室分析：用现有传感器与 AI 实时管理废水。数据托管于魁北克。",
     digitalTwinTitle: "数字孪生 — AquaPure Analytics",
     digitalTwinDescription:
       "了解 AquaPure 如何连接您的数据库并使用自托管的 AI 代理来自动化工业流程并优化实时控制。",
@@ -35,6 +35,7 @@ export const zh: Translations = {
     sectorsTitle: "行业领域",
     companyTitle: "公司",
     blog: "博客",
+    privacy: "隐私政策",
     linkedInAria: "AquaPure Analytics 的 LinkedIn 页面",
     sectors: [
       { label: "市政用水", href: "/#eaux-municipales" },
@@ -43,13 +44,21 @@ export const zh: Translations = {
       { label: "食品与饮料", href: "/#agroalimentaire" },
     ],
   },
+  consent: {
+    ariaLabel: "数据收集同意",
+    message:
+      "我们使用必要 Cookie 记住您的偏好，并仅在您同意的情况下启用分析工具，符合魁北克第 25 号法案与加拿大 PIPEDA。",
+    accept: "接受",
+    reject: "拒绝",
+    learnMore: "隐私政策",
+  },
   home: {
     hero: {
-      title: "通过数据与 AI 掌控市政用水与矿业及工业废水管理",
+      title: "降低废水处理成本，在账单不断攀升之前",
       subtitle:
         "将数据转化为即时决策：减少浪费、提升控制力、实现可持续绩效 — 无需扰乱现有运营。",
-      hosting: "您的数据托管于魁北克，并在本地掌控。",
-      contact: "联系我们",
+      hosting: "您的数据留在魁北克，托管在本地。",
+      contact: "了解如何降低成本",
       demo: "申请演示",
     },
     industries: {
@@ -194,6 +203,9 @@ export const zh: Translations = {
       successBody:
         "AquaPure 团队成员将审核您的需求，并在一至两个工作日内与您联系，安排一次针对您运营的深入讨论。",
       honeypot: "请勿填写",
+      privacyConsentBefore: "我同意按照",
+      privacyConsentLink: "隐私政策",
+      privacyConsentAfter: "处理我的个人信息。",
       errors: {
         lastName: "姓氏为必填项。",
         firstName: "名字为必填项。",
@@ -202,6 +214,7 @@ export const zh: Translations = {
         message: "请描述您的需求。",
         messageTooLong: "消息不能超过 5000 个字符。",
         emailTooLong: "电子邮件过长。",
+        consentRequired: "提交请求前必须接受隐私政策。",
       },
     },
   },
@@ -280,6 +293,12 @@ export const zh: Translations = {
     requestDemo: "申请演示",
     digitalTwin: "数字孪生",
     articleTitleSuffix: "AquaPure 博客",
+    relatedAria: "相关文章与网站页面",
+    relatedTitle: "其他已发布文章",
+    seeAlso: "另请参阅：",
+    and: "和",
+    allArticles: "全部文章",
+    privacyPolicy: "隐私政策",
   },
   categories: {
     "Eaux municipales": "市政用水",
@@ -366,6 +385,8 @@ export const zh: Translations = {
 <h2>降低成本，减轻魁北克环境部检查压力</h2>
 
 <p>认可实验室单项分析约 80–250 加元。连续预测不取代法规要求的参考分析，但能在两次正式取样之间提供可见性，并在 MELCCFP 突击检查时拿出可审计的轨迹。</p>
+
+<p>延伸阅读：<a href="/blogue/kuangshan-guocheng-shui-youhua" rel="noopener noreferrer">矿山过程水优化</a>与<a href="/blogue/wushui-chuli-zhan-shishi-kongzhi" rel="noopener noreferrer">污水厂实时控制</a>。</p>
 
 <p><em>最后更新：2026 年 6 月。</em></p>`,
     },

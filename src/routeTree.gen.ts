@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as JumeauNumeriqueRouteImport } from './routes/jumeau-numerique'
+import { Route as ConfidentialiteRouteImport } from './routes/confidentialite'
 import { Route as AdminblogRouteImport } from './routes/adminblog'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogueIndexRouteImport } from './routes/blogue/index'
@@ -18,6 +19,11 @@ import { Route as BlogueSlugRouteImport } from './routes/blogue/$slug'
 const JumeauNumeriqueRoute = JumeauNumeriqueRouteImport.update({
   id: '/jumeau-numerique',
   path: '/jumeau-numerique',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConfidentialiteRoute = ConfidentialiteRouteImport.update({
+  id: '/confidentialite',
+  path: '/confidentialite',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdminblogRoute = AdminblogRouteImport.update({
@@ -44,6 +50,7 @@ const BlogueSlugRoute = BlogueSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/adminblog': typeof AdminblogRoute
+  '/confidentialite': typeof ConfidentialiteRoute
   '/jumeau-numerique': typeof JumeauNumeriqueRoute
   '/blogue/$slug': typeof BlogueSlugRoute
   '/blogue/': typeof BlogueIndexRoute
@@ -51,6 +58,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/adminblog': typeof AdminblogRoute
+  '/confidentialite': typeof ConfidentialiteRoute
   '/jumeau-numerique': typeof JumeauNumeriqueRoute
   '/blogue/$slug': typeof BlogueSlugRoute
   '/blogue': typeof BlogueIndexRoute
@@ -59,6 +67,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/adminblog': typeof AdminblogRoute
+  '/confidentialite': typeof ConfidentialiteRoute
   '/jumeau-numerique': typeof JumeauNumeriqueRoute
   '/blogue/$slug': typeof BlogueSlugRoute
   '/blogue/': typeof BlogueIndexRoute
@@ -68,15 +77,23 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/adminblog'
+    | '/confidentialite'
     | '/jumeau-numerique'
     | '/blogue/$slug'
     | '/blogue/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/adminblog' | '/jumeau-numerique' | '/blogue/$slug' | '/blogue'
+  to:
+    | '/'
+    | '/adminblog'
+    | '/confidentialite'
+    | '/jumeau-numerique'
+    | '/blogue/$slug'
+    | '/blogue'
   id:
     | '__root__'
     | '/'
     | '/adminblog'
+    | '/confidentialite'
     | '/jumeau-numerique'
     | '/blogue/$slug'
     | '/blogue/'
@@ -85,6 +102,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AdminblogRoute: typeof AdminblogRoute
+  ConfidentialiteRoute: typeof ConfidentialiteRoute
   JumeauNumeriqueRoute: typeof JumeauNumeriqueRoute
   BlogueSlugRoute: typeof BlogueSlugRoute
   BlogueIndexRoute: typeof BlogueIndexRoute
@@ -97,6 +115,13 @@ declare module '@tanstack/react-router' {
       path: '/jumeau-numerique'
       fullPath: '/jumeau-numerique'
       preLoaderRoute: typeof JumeauNumeriqueRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/confidentialite': {
+      id: '/confidentialite'
+      path: '/confidentialite'
+      fullPath: '/confidentialite'
+      preLoaderRoute: typeof ConfidentialiteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/adminblog': {
@@ -133,6 +158,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdminblogRoute: AdminblogRoute,
+  ConfidentialiteRoute: ConfidentialiteRoute,
   JumeauNumeriqueRoute: JumeauNumeriqueRoute,
   BlogueSlugRoute: BlogueSlugRoute,
   BlogueIndexRoute: BlogueIndexRoute,

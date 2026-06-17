@@ -4,7 +4,7 @@ export const SITE_URL = "https://aquapure-analytics.com";
 export const SITE_NAME = "AquaPure Analytics";
 
 export const DEFAULT_DESCRIPTION =
-  "AquaPure Analytics optimise la gestion des eaux municipales et des effluents miniers et industriels grâce à la donnée, l'IA et l'analyse en temps réel au Québec.";
+  "Chimie, énergie, analyses labo : pilotez vos effluents en temps réel avec vos capteurs et l'IA. Données hébergées au Québec.";
 
 export const LINKEDIN_URL =
   "https://www.linkedin.com/company/aquapure-analytics/?viewAsMember=true";
@@ -16,6 +16,7 @@ export const PUBLIC_PATHS = [
   "/blogue/eau-procede-mine-optimiser-sans-compromettre",
   "/blogue/station-depuration-pilotage-temps-reel",
   "/blogue/metaux-lourds-prediction-ia-capteurs-mine",
+  "/confidentialite",
 ] as const;
 
 export function absoluteUrl(path: string): string {

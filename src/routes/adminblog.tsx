@@ -1,13 +1,21 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Plus } from "lucide-react";
-import { useState } from "react";
+import { Eye, Pencil, Plus } from "lucide-react";
+import { useRef, useState } from "react";
 import { BlogContent } from "@/components/blog/blog-content";
 import { RichTextEditor } from "@/components/blog/rich-text-editor";
 import { SiteFooter } from "@/components/site/footer";
 import { useBlogPosts } from "@/hooks/use-blog-posts";
 import { addCategory, getAllCategories } from "@/lib/blog/categories";
 import { contentToPlainText } from "@/lib/blog/content";
-import { addCustomPost, deleteCustomPost, estimateReadMinutes, slugify } from "@/lib/blog/store";
+import {
+  addCustomPost,
+  deleteCustomPost,
+  estimateReadMinutes,
+  isCustomPost,
+  slugify,
+  updateCustomPost,
+} from "@/lib/blog/store";
+import type { BlogPost } from "@/lib/blog/types";
 
 export const Route = createFileRoute("/adminblog")({
   head: () => ({
@@ -33,8 +41,10 @@ function isAllowedCoverImage(value: string): boolean {
 
 function AdminBlogPage() {
   const { posts, refresh } = useBlogPosts();
-  const customPosts = posts.filter((p) => p.id.startsWith("custom-"));
+  const publishedRef = useRef<HTMLElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
 
+  const [editingId, setEditingId] = useState<string | null>(null);
   const [title, setTitle] = useState("");
   const [slug, setSlug] = useState("");
   const [excerpt, setExcerpt] = useState("");
@@ -50,6 +60,21 @@ function AdminBlogPage() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [showPreview, setShowPreview] = useState(false);
+
+  const resetForm = () => {
+    setEditingId(null);
+    setTitle("");
+    setSlug("");
+    setExcerpt("");
+    setContent("");
+    setCoverImage("");
+    setAuthor("Équipe AquaPure");
+    setPublishedAt(new Date().toISOString().slice(0, 10));
+    setCategory(getAllCategories()[0] ?? "Opérations");
+    setShowPreview(false);
+    setEditorKey((k) => k + 1);
+    setError("");
+  };
 
   const refreshCategories = () => {
     const all = getAllCategories();
@@ -117,7 +142,7 @@ function AdminBlogPage() {
     }
 
     try {
-      const post = addCustomPost({
+      const payload = {
         title,
         slug: slug || slugify(title),
         excerpt,
@@ -126,18 +151,49 @@ function AdminBlogPage() {
         category,
         author,
         publishedAt,
-      });
-      setSuccess(`Article « ${post.title} » publié avec succès.`);
-      setTitle("");
-      setSlug("");
-      setExcerpt("");
-      setContent("");
-      setCoverImage("");
-      setEditorKey((k) => k + 1);
+      };
+
+      const post = editingId
+        ? updateCustomPost(editingId, payload)
+        : addCustomPost(payload);
+
+      setSuccess(
+        editingId
+          ? `Article « ${post.title} » mis à jour.`
+          : `Article « ${post.title} » publié avec succès.`,
+      );
+      resetForm();
       refresh();
     } catch (err) {
       setError(err instanceof Error ? err.message : "Erreur lors de la publication.");
     }
+  };
+
+  const handleEdit = (post: BlogPost) => {
+    if (!isCustomPost(post.id)) return;
+    setEditingId(post.id);
+    setTitle(post.title);
+    setSlug(post.slug);
+    setExcerpt(post.excerpt);
+    setContent(post.content);
+    setCoverImage(post.coverImage);
+    setCategory(post.category);
+    setAuthor(post.author);
+    setPublishedAt(post.publishedAt.slice(0, 10));
+    setShowPreview(false);
+    setEditorKey((k) => k + 1);
+    setError("");
+    setSuccess("");
+    formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  const handleCancelEdit = () => {
+    resetForm();
+    setSuccess("");
+  };
+
+  const scrollToPublished = () => {
+    publishedRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   const handleDelete = (id: string) => {
@@ -157,6 +213,13 @@ function AdminBlogPage() {
             </p>
           </div>
           <div className="flex gap-3">
+            <button
+              type="button"
+              onClick={scrollToPublished}
+              className="rounded-md border border-input px-4 py-2 text-sm font-medium hover:bg-accent transition-colors"
+            >
+              Publiés
+            </button>
             <Link
               to="/blogue"
               className="rounded-md border border-input px-4 py-2 text-sm font-medium hover:bg-accent transition-colors"
@@ -172,8 +235,10 @@ function AdminBlogPage() {
 
       <div className="mx-auto max-w-5xl px-4 sm:px-6 py-8 sm:py-10 grid lg:grid-cols-2 gap-8 lg:gap-10">
         <section>
-          <h2 className="text-lg font-bold text-navy mb-4">Nouvel article</h2>
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <h2 className="text-lg font-bold text-navy mb-4">
+            {editingId ? "Modifier l'article" : "Nouvel article"}
+          </h2>
+          <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label className="text-sm font-medium">Titre *</label>
               <input
@@ -328,26 +393,37 @@ function AdminBlogPage() {
             {error && <p className="text-sm text-destructive">{error}</p>}
             {success && <p className="text-sm text-emerald-600">{success}</p>}
 
-            <button
-              type="submit"
-              className="rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
-            >
-              Publier l&apos;article
-            </button>
+            <div className="flex flex-wrap gap-3">
+              <button
+                type="submit"
+                className="rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
+              >
+                {editingId ? "Enregistrer" : "Publier l'article"}
+              </button>
+              {editingId && (
+                <button
+                  type="button"
+                  onClick={handleCancelEdit}
+                  className="rounded-md border border-input px-5 py-2.5 text-sm font-medium hover:bg-accent transition-colors"
+                >
+                  Annuler
+                </button>
+              )}
+            </div>
           </form>
         </section>
 
-        <section>
+        <section ref={publishedRef}>
           <h2 className="text-lg font-bold text-navy mb-4">
-            Articles ajoutés ({customPosts.length})
+            Publiés ({posts.length})
           </h2>
-          {customPosts.length === 0 ? (
+          {posts.length === 0 ? (
             <p className="text-sm text-muted-foreground rounded-xl border border-dashed border-border p-6">
-              Aucun article personnalisé. Les 2 articles de départ sont intégrés au code source.
+              Aucun article publié pour l&apos;instant.
             </p>
           ) : (
             <ul className="space-y-3">
-              {customPosts.map((post) => (
+              {posts.map((post) => (
                 <li
                   key={post.id}
                   className="rounded-xl border border-border/60 bg-card overflow-hidden flex gap-0"
@@ -359,23 +435,52 @@ function AdminBlogPage() {
                   )}
                   <div className="p-4 flex flex-1 items-start justify-between gap-4 min-w-0">
                     <div className="min-w-0">
-                      <div className="text-xs text-muted-foreground">{post.category}</div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs text-muted-foreground">{post.category}</span>
+                        {!isCustomPost(post.id) && (
+                          <span className="text-[10px] uppercase tracking-wide text-muted-foreground/80">
+                            intégré
+                          </span>
+                        )}
+                      </div>
                       <div className="font-semibold text-sm text-navy truncate">{post.title}</div>
-                      <Link
-                        to="/blogue/$slug"
-                        params={{ slug: post.slug }}
+                      <a
+                        href={`/blogue/${post.slug}`}
                         className="text-xs text-primary hover:underline"
                       >
                         /blogue/{post.slug}
-                      </Link>
+                      </a>
                     </div>
-                    <button
-                      type="button"
-                      onClick={() => handleDelete(post.id)}
-                      className="shrink-0 text-xs text-destructive hover:underline"
-                    >
-                      Supprimer
-                    </button>
+                    <div className="flex shrink-0 flex-col items-end gap-2 sm:flex-row sm:items-center">
+                      <a
+                        href={`/blogue/${post.slug}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline"
+                      >
+                        <Eye className="size-3.5" />
+                        Voir
+                      </a>
+                      {isCustomPost(post.id) ? (
+                        <>
+                          <button
+                            type="button"
+                            onClick={() => handleEdit(post)}
+                            className="inline-flex items-center gap-1 text-xs font-medium text-navy hover:underline"
+                          >
+                            <Pencil className="size-3.5" />
+                            Modifier
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => handleDelete(post.id)}
+                            className="text-xs text-destructive hover:underline"
+                          >
+                            Supprimer
+                          </button>
+                        </>
+                      ) : null}
+                    </div>
                   </div>
                 </li>
               ))}

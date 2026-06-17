@@ -10,6 +10,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import { ConsentBanner } from "../components/site/consent-banner";
 import { LocaleProvider, useLocale } from "../i18n/context";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import {
@@ -104,6 +105,7 @@ function RootShell({ children }: { children: ReactNode }) {
       <body>
         <LocaleProvider>
           {children}
+          <ConsentBanner />
           <Scripts />
         </LocaleProvider>
       </body>

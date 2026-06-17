@@ -2,9 +2,9 @@ import type { Translations } from "../types";
 
 export const en: Translations = {
   meta: {
-    homeTitle: "AquaPure Analytics — Master municipal water and mining and industrial effluent management",
+    homeTitle: "AquaPure Analytics — Cut your effluent treatment costs",
     homeDescription:
-      "Optimize water management with data, AI and real-time intelligence. Reduce costs and meet your ESG targets.",
+      "Chemicals, energy, lab analyses: run your effluents in real time with your existing sensors and AI. Data hosted in Quebec.",
     digitalTwinTitle: "Digital Twin — AquaPure Analytics",
     digitalTwinDescription:
       "See how AquaPure connects your databases and uses a self-hosted AI agent to automate industrial processes and optimize real-time control.",
@@ -35,6 +35,7 @@ export const en: Translations = {
     sectorsTitle: "Industry sectors",
     companyTitle: "Company",
     blog: "Blog",
+    privacy: "Privacy policy",
     linkedInAria: "AquaPure Analytics on LinkedIn",
     sectors: [
       { label: "Municipal water", href: "/#eaux-municipales" },
@@ -43,13 +44,21 @@ export const en: Translations = {
       { label: "Food & beverage", href: "/#agroalimentaire" },
     ],
   },
+  consent: {
+    ariaLabel: "Data collection consent",
+    message:
+      "We use essential cookies to remember your preferences and may enable analytics tools only with your consent, in accordance with Quebec Law 25 and PIPEDA.",
+    accept: "Accept",
+    reject: "Reject",
+    learnMore: "Privacy policy",
+  },
   home: {
     hero: {
-      title: "Master municipal water and mining and industrial effluent management with data and AI",
+      title: "Cut your effluent treatment costs, before the bill keeps climbing",
       subtitle:
-        "Turn your data into immediate decisions: less waste, more control, and sustainable performance — without disrupting existing operations.",
-      hosting: "Your data hosted in Quebec, on your premises.",
-      contact: "Contact us",
+        "Turn your data into immediate decisions: less waste, more control, and sustainable performance — without disrupting your current operations.",
+      hosting: "Your data stays in Quebec, hosted on your premises.",
+      contact: "See how to cut your costs",
       demo: "Request a demo",
     },
     industries: {
@@ -194,6 +203,9 @@ export const en: Translations = {
       successBody:
         "A member of the AquaPure team will review your request and contact you within one to two business days to schedule a focused discussion about your operations.",
       honeypot: "Do not fill",
+      privacyConsentBefore: "I agree that my information will be processed in accordance with the ",
+      privacyConsentLink: "privacy policy",
+      privacyConsentAfter: ".",
       errors: {
         lastName: "Last name is required.",
         firstName: "First name is required.",
@@ -202,6 +214,7 @@ export const en: Translations = {
         message: "Describe your need.",
         messageTooLong: "Message cannot exceed 5000 characters.",
         emailTooLong: "Email is too long.",
+        consentRequired: "You must accept the privacy policy to submit your request.",
       },
     },
   },
@@ -280,6 +293,12 @@ export const en: Translations = {
     requestDemo: "Request a demo",
     digitalTwin: "Digital twin",
     articleTitleSuffix: "AquaPure Blog",
+    relatedAria: "Related articles and site pages",
+    relatedTitle: "Other published articles",
+    seeAlso: "See also:",
+    and: "and",
+    allArticles: "All articles",
+    privacyPolicy: "Privacy policy",
   },
   categories: {
     "Eaux municipales": "Municipal water",
@@ -390,6 +409,8 @@ Every week without continuous visibility accrues operational and environmental c
 <p>Accredited multi-metal lab analyses often cost CAD 80–250 per sample. Multiply by weekly sampling across multiple points and the line item quickly reaches tens of thousands per year — before field time.</p>
 
 <p>Continuous prediction does not replace required reference analyses. It <strong>focuses sampling</strong> where the model flags risk and helps teams answer when Quebec's environment ministry asks what happened between two official samples.</p>
+
+<p>Related reading: <a href="/blogue/process-water-mining-optimize-without-compromising-compliance" rel="noopener noreferrer">process water in mining</a> and <a href="/blogue/wastewater-plant-real-time-control" rel="noopener noreferrer">real-time wastewater plant control</a>.</p>
 
 <h2>Frequently asked questions</h2>
 

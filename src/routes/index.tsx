@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
   ArrowRight,
@@ -48,6 +48,7 @@ import { submitContactForm } from "@/lib/api/contact.functions";
 import { useLocale } from "@/i18n/context";
 import { PageMeta } from "@/components/site/page-meta";
 import { SpreadsheetHoverBackground } from "@/components/site/spreadsheet-hover-background";
+import { TypewriterText } from "@/components/site/typewriter-text";
 import { fr } from "@/i18n/translations/fr";
 import { buildPageHead } from "@/lib/seo/site-config";
 
@@ -79,12 +80,17 @@ function Hero() {
           </h1>
         </Reveal>
         <Reveal delay={120}>
-          <p className="mt-6 text-base text-muted-foreground max-w-xl mx-auto leading-relaxed">
+          <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
             {t.home.hero.subtitle}
-            <span className="mt-3 block font-semibold text-foreground">{t.home.hero.hosting}</span>
           </p>
         </Reveal>
-        <Reveal delay={220}>
+        <Reveal delay={200}>
+          <TypewriterText
+            text={t.home.hero.hosting}
+            className="mt-5 text-lg sm:text-xl md:text-2xl font-semibold text-navy max-w-2xl mx-auto leading-snug tracking-tight"
+          />
+        </Reveal>
+        <Reveal delay={280}>
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center items-stretch sm:items-center max-w-sm sm:max-w-none mx-auto">
             <a href="#contact" className="rounded-md border border-input bg-background px-5 py-2.5 text-sm font-medium hover:bg-accent transition-colors text-center">
               {t.home.hero.contact}
@@ -464,7 +470,7 @@ function ContactField({
 function Contact() {
   const { t } = useLocale();
 
-  const validateContactForm = (form: ContactFormState): string | null => {
+  const validateContactForm = (form: ContactFormState, privacyConsent: boolean): string | null => {
     if (!form.lastName.trim()) return t.home.contact.errors.lastName;
     if (!form.firstName.trim()) return t.home.contact.errors.firstName;
     if (!form.email.trim()) return t.home.contact.errors.emailRequired;
@@ -474,9 +480,11 @@ function Contact() {
     if (!form.message.trim()) return t.home.contact.errors.message;
     if (form.message.length > 5000) return t.home.contact.errors.messageTooLong;
     if (form.email.length > 254) return t.home.contact.errors.emailTooLong;
+    if (!privacyConsent) return t.home.contact.errors.consentRequired;
     return null;
   };
   const [form, setForm] = useState<ContactFormState>(emptyContactForm);
+  const [privacyConsent, setPrivacyConsent] = useState(false);
   const [botField, setBotField] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
@@ -497,7 +505,7 @@ function Contact() {
       return;
     }
 
-    const validationError = validateContactForm(form);
+    const validationError = validateContactForm(form, privacyConsent);
     if (validationError) {
       setError(validationError);
       return;
@@ -510,9 +518,11 @@ function Contact() {
         data: {
           ...form,
           botField,
+          consent: true,
         },
       });
       setForm(emptyContactForm);
+      setPrivacyConsent(false);
       setBotField("");
       setSuccess(true);
     } catch (err) {
@@ -557,6 +567,22 @@ function Contact() {
                 </label>
                 <textarea id="message" name="message" rows={5} value={form.message} onChange={(e) => updateField("message", e.target.value)} placeholder={t.home.contact.needPlaceholder} className="mt-2 w-full rounded-xl bg-white px-3 py-3 text-navy outline-none resize-y min-h-[120px] placeholder:text-navy/40" />
               </div>
+
+              <label className="flex items-start gap-3 text-sm text-white/90 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={privacyConsent}
+                  onChange={(e) => setPrivacyConsent(e.target.checked)}
+                  className="mt-1 size-4 shrink-0 rounded border-white/30 accent-white"
+                />
+                <span>
+                  {t.home.contact.privacyConsentBefore}
+                  <Link to="/confidentialite" className="font-medium text-white underline underline-offset-2 hover:text-white/90">
+                    {t.home.contact.privacyConsentLink}
+                  </Link>
+                  {t.home.contact.privacyConsentAfter}
+                </span>
+              </label>
 
               {error && <p className="text-sm text-red-300">{error}</p>}
               {success && (

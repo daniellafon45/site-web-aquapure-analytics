@@ -115,7 +115,7 @@ export const digitalTwinFaqFr: DigitalTwinFaqContent = {
         {
           type: "link",
           label: "Directive 019, MELCCFP",
-          href: "https://www.environnement.gouv.qc.ca/milieu_ind/directive019/",
+          href: "https://www.environnement.gouv.qc.ca/milieu_ind/directive019/index.htm",
           external: true,
         },
         { type: "text", value: "." },
@@ -166,7 +166,7 @@ export const digitalTwinFaqFr: DigitalTwinFaqContent = {
         {
           type: "link",
           label: "Directive 019 sur l'industrie minière",
-          href: "https://www.environnement.gouv.qc.ca/milieu_ind/directive019/",
+          href: "https://www.environnement.gouv.qc.ca/milieu_ind/directive019/index.htm",
           external: true,
         },
         {
@@ -389,7 +389,7 @@ const EN_FAQ: Pick<DigitalTwinFaqContent["items"][number], "question" | "answerP
       {
         type: "link",
         label: "Directive 019, MELCCFP",
-        href: "https://www.environnement.gouv.qc.ca/milieu_ind/directive019/",
+        href: "https://www.environnement.gouv.qc.ca/milieu_ind/directive019/index.htm",
         external: true,
       },
       { type: "text", value: "." },
@@ -425,7 +425,7 @@ const EN_FAQ: Pick<DigitalTwinFaqContent["items"][number], "question" | "answerP
       {
         type: "link",
         label: "Directive 019",
-        href: "https://www.environnement.gouv.qc.ca/milieu_ind/directive019/",
+        href: "https://www.environnement.gouv.qc.ca/milieu_ind/directive019/index.htm",
         external: true,
       },
       { type: "text", value: ", " },

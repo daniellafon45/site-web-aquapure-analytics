@@ -355,7 +355,7 @@ Every week without continuous visibility accrues operational and environmental c
         "Copper, nickel, zinc: lab results arrive too late. Site managers correlate turbidity and pH by regression, AquaPure automates that logic with AI and your existing sensors.",
       category: "Mine",
       author: "AquaPure Team",
-      content: `<p><strong>Heavy metals in mine effluent</strong> are trace elements (copper, nickel, zinc, lead, iron) whose discharge limits are tightly regulated in Quebec, notably under <a href="https://www.environnement.gouv.qc.ca/mines/effluents/directive019.htm" rel="noopener noreferrer" target="_blank">Directive 019</a>. The challenge is not whether to measure them, it is seeing concentrations <em>in time</em> to act.</p>
+      content: `<p><strong>Heavy metals in mine effluent</strong> are trace elements (copper, nickel, zinc, lead, iron) whose discharge limits are tightly regulated in Quebec, notably under <a href="https://www.environnement.gouv.qc.ca/milieu_ind/directive019/index.htm" rel="noopener noreferrer" target="_blank">Directive 019</a>. The challenge is not whether to measure them, it is seeing concentrations <em>in time</em> to act.</p>
 
 <h2>Why heavy-metal monitoring remains a blind spot</h2>
 

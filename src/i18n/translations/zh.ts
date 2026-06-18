@@ -355,7 +355,7 @@ export const zh: Translations = {
         "铜、镍、锌：实验室结果往往滞后。现场管理者用浊度、pH 等做回归相关，AquaPure 用 AI 与现有传感器将这一逻辑自动化。",
       category: "Mine",
       author: "AquaPure 团队",
-      content: `<p><strong>矿山废水中的重金属</strong>（铜、镍、锌、铅、铁）在魁北克受严格监管，尤其是<a href="https://www.environnement.gouv.qc.ca/mines/effluents/directive019.htm" rel="noopener noreferrer" target="_blank">第 019 号指令</a>。难点不在于要不要测，而在于能否<em>及时</em>掌握浓度并采取行动。</p>
+      content: `<p><strong>矿山废水中的重金属</strong>（铜、镍、锌、铅、铁）在魁北克受严格监管，尤其是<a href="https://www.environnement.gouv.qc.ca/milieu_ind/directive019/index.htm" rel="noopener noreferrer" target="_blank">第 019 号指令</a>。难点不在于要不要测，而在于能否<em>及时</em>掌握浓度并采取行动。</p>
 
 <h2>实时监测的盲区</h2>
 

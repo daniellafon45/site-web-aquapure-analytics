@@ -355,7 +355,7 @@ Cada semana sin visibilidad continua acumula costos operativos y ambientales que
         "Cobre, níquel, zinc: los resultados de laboratorio llegan tarde. Los gestores correlacionan turbidez y pH por regresión, AquaPure automatiza esa lógica con IA y sus sensores existentes.",
       category: "Mine",
       author: "Equipo AquaPure",
-      content: `<p><strong>Los metales pesados en efluentes mineros</strong> (cobre, níquel, zinc, plomo, hierro) están estrictamente regulados en Quebec, en particular bajo la <a href="https://www.environnement.gouv.qc.ca/mines/effluents/directive019.htm" rel="noopener noreferrer" target="_blank">Directiva 019</a>. El reto no es medirlos, sino verlos <em>a tiempo</em> para actuar.</p>
+      content: `<p><strong>Los metales pesados en efluentes mineros</strong> (cobre, níquel, zinc, plomo, hierro) están estrictamente regulados en Quebec, en particular bajo la <a href="https://www.environnement.gouv.qc.ca/milieu_ind/directive019/index.htm" rel="noopener noreferrer" target="_blank">Directiva 019</a>. El reto no es medirlos, sino verlos <em>a tiempo</em> para actuar.</p>
 
 <h2>Por qué el seguimiento en tiempo real falla</h2>
 

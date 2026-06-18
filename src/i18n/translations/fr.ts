@@ -355,7 +355,7 @@ Chaque semaine sans visibilité continue, ce sont des coûts opérationnels et e
         "Cuivre, nickel, zinc : les analyses labo arrivent trop tard. Les gestionnaires corrèlent turbidité et pH par régression, AquaPure automatise cette logique avec l'IA et vos capteurs existants.",
       category: "Mine",
       author: "Équipe AquaPure",
-      content: `<p><strong>Les métaux lourds en effluent minier</strong> désignent des éléments traces (cuivre, nickel, zinc, plomb, fer) dont les concentrations réglementaires sont strictement encadrées au Québec, notamment sous la <a href="https://www.environnement.gouv.qc.ca/mines/effluents/directive019.htm" rel="noopener noreferrer" target="_blank">Directive 019</a>. Le problème n'est pas de savoir s'il faut les mesurer, c'est de les voir <em>à temps</em> pour agir.</p>
+      content: `<p><strong>Les métaux lourds en effluent minier</strong> désignent des éléments traces (cuivre, nickel, zinc, plomb, fer) dont les concentrations réglementaires sont strictement encadrées au Québec, notamment sous la <a href="https://www.environnement.gouv.qc.ca/milieu_ind/directive019/index.htm" rel="noopener noreferrer" target="_blank">Directive 019</a>. Le problème n'est pas de savoir s'il faut les mesurer, c'est de les voir <em>à temps</em> pour agir.</p>
 
 <h2>Pourquoi le suivi des métaux lourds reste un angle mort</h2>
 

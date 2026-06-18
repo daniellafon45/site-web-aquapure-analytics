@@ -1,4 +1,5 @@
 import type { Translations } from "../types";
+import { digitalTwinFaqFr } from "../digital-twin-faq-content";
 
 export const fr: Translations = {
   meta: {
@@ -7,7 +8,7 @@ export const fr: Translations = {
       "Chimie, énergie, analyses labo : pilotez vos effluents en temps réel avec vos capteurs et l'IA. Données hébergées au Québec.",
     digitalTwinTitle: "Jumeau numérique, Aquapure Analytics",
     digitalTwinDescription:
-      "Découvrez comment AquaPure connecte vos bases de données et exploite un agent IA auto-hébergé pour automatiser vos procédés industriels et optimiser le contrôle en temps réel.",
+      "Jumeau numérique pour le traitement des eaux : IA auto-hébergée, SCADA, capteurs virtuels et conformité. FAQ et démo AquaPure au Québec.",
     blogTitle: "Blogue, Aquapure Analytics",
     blogDescription:
       "Actualités, analyses et expertise pour les gestionnaires d'eau municipale, miniers, papetiers et agroalimentaires au Québec.",
@@ -62,10 +63,10 @@ export const fr: Translations = {
       demo: "Demander une démo",
     },
     industries: {
-      eyebrow: "Nos secteurs",
-      title: "Conçu pour les environnements opérationnels complexes",
+      eyebrow: "Optimiser vos opérations",
+      title: "Conçu sur mesure pour les environnements opérationnels complexes",
       description:
-        "Transformez vos engagements ESG en résultats opérationnels concrets : réduisez la consommation d'eau, limitez votre empreinte carbone et documentez vos progrès avec une précision que vos équipes et vos parties prenantes peuvent défendre, grâce à l'analyse en temps réel et à l'IA, au cœur des industries québécoises.",
+        "Convertissez vos engagements ESG en gains mesurables : moins d'eau, moins de chimie, moins de carbone, documentés en temps réel par vos jumeaux numériques.",
       scheduleMeeting: "Planifier une rencontre",
       items: [
         {
@@ -97,8 +98,8 @@ export const fr: Translations = {
     features: {
       title: "Fonctionnalités",
       ergonomic:
-        "Nos interfaces sont très ergonomiques et pensées pour être très intuitives et faciles à utiliser.",
-      body: "Nous déployons des systèmes interopérables branchés sur votre infrastructure actuelle, puis adaptons chaque module à vos besoins réels, pour que la technologie accélère vos opérations, sans les complexifier.",
+        "Nos interfaces sont conçues selon vos besoins : ergonomiques, intuitives et faciles à utiliser.",
+      body: "Nous déployons des systèmes interopérables connectés à votre infrastructure existante, puis adaptons chaque module à vos usages réels, pour que la technologie accélère vos opérations sans les complexifier. Voici un aperçu de nos fonctionnalités sans s'y limiter :",
       learnMore: "En savoir plus",
       items: [
         {
@@ -183,7 +184,7 @@ export const fr: Translations = {
         "Une technologie éprouvée, portée par les leaders de l'innovation québécoise, pour accélérer votre transition numérique en toute confiance.",
     },
     contact: {
-      title: "Parlons de votre projet",
+      title: "Votre feuille de route IA commence ici.",
       subtitle:
         "Découvrez comment Aquapure Analytics peut améliorer votre performance environnementale et économique, avec une stratégie sur mesure, adaptée à votre réalité opérationnelle.",
       formTitle: "Décrivez votre besoin",
@@ -221,7 +222,7 @@ export const fr: Translations = {
   digitalTwin: {
     title: "Comment fonctionnent nos plateformes de jumeau numérique ?",
     subtitle:
-      "Découvrez comment AquaPure connecte vos bases de données et exploite un agent IA auto-hébergé pour automatiser vos procédés industriels et optimiser le contrôle en temps réel.",
+      "Nos jumeaux numériques connectent vos capteurs, SCADA et historiques pour reproduire vos procédés en temps réel : vous visualisez l'état actuel, anticipez les écarts et automatisez le contrôle de vos automates. Les recommandations s'appuient sur ce que nos modèles mathématiques traitent, et que vos équipes peuvent suivre et défendre, pas sur une IA boîte noire.",
     diagram: {
       selfHostedDb: "Base AquaPure auto-hébergée",
       yourDatabase: "Votre propre base de données",
@@ -238,7 +239,7 @@ export const fr: Translations = {
     },
     whyTitle: "Pourquoi AquaPure ?",
     whySubtitle:
-      "Automatisez le contrôle industriel, réduisez la consommation d'énergie et prenez des décisions fondées sur des données fiables, sans compromettre la sécurité ni la souveraineté de vos informations.",
+      "Bâtir un Québec capable de maîtriser sa transformation industrielle : c'est notre mission. Optimiser les procédés, préserver les équipements, fermer la boucle sur l'eau et l'énergie, avec des décisions fondées sur des données fiables, hébergées localement et défendables par vos équipes.",
     whyFeatures: [
       {
         title: "Optimisation des procédés par l'IA",
@@ -272,6 +273,7 @@ export const fr: Translations = {
     municipal: "Pour les municipalités",
     industry: "Pour l'industrie",
     contactUs: "Contactez-nous",
+    faq: digitalTwinFaqFr,
   },
   blog: {
     eyebrow: "Blogue",
@@ -348,12 +350,12 @@ Chaque semaine sans visibilité continue, ce sont des coûts opérationnels et e
     {
       id: "seed-heavy-metals",
       slug: "metaux-lourds-prediction-ia-capteurs-mine",
-      title: "Métaux lourds en mine : pourquoi vos capteurs ne suffisent pas — et comment l'IA comble l'écart",
+      title: "Métaux lourds en mine : pourquoi vos capteurs ne suffisent pas, et comment l'IA comble l'écart",
       excerpt:
-        "Cuivre, nickel, zinc : les analyses labo arrivent trop tard. Les gestionnaires corrèlent turbidité et pH par régression — AquaPure automatise cette logique avec l'IA et vos capteurs existants.",
+        "Cuivre, nickel, zinc : les analyses labo arrivent trop tard. Les gestionnaires corrèlent turbidité et pH par régression, AquaPure automatise cette logique avec l'IA et vos capteurs existants.",
       category: "Mine",
       author: "Équipe AquaPure",
-      content: `<p><strong>Les métaux lourds en effluent minier</strong> désignent des éléments traces (cuivre, nickel, zinc, plomb, fer) dont les concentrations réglementaires sont strictement encadrées au Québec, notamment sous la <a href="https://www.environnement.gouv.qc.ca/mines/effluents/directive019.htm" rel="noopener noreferrer" target="_blank">Directive 019</a>. Le problème n'est pas de savoir s'il faut les mesurer — c'est de les voir <em>à temps</em> pour agir.</p>
+      content: `<p><strong>Les métaux lourds en effluent minier</strong> désignent des éléments traces (cuivre, nickel, zinc, plomb, fer) dont les concentrations réglementaires sont strictement encadrées au Québec, notamment sous la <a href="https://www.environnement.gouv.qc.ca/mines/effluents/directive019.htm" rel="noopener noreferrer" target="_blank">Directive 019</a>. Le problème n'est pas de savoir s'il faut les mesurer, c'est de les voir <em>à temps</em> pour agir.</p>
 
 <h2>Pourquoi le suivi des métaux lourds reste un angle mort</h2>
 
@@ -367,11 +369,11 @@ Chaque semaine sans visibilité continue, ce sont des coûts opérationnels et e
 
 <p>Face à ce décalage, les ingénieurs et gestionnaires environnementaux en mine font ce que les données leur permettent : ils construisent des <strong>courbes de régression</strong> entre des paramètres faciles à mesurer en continu et les concentrations de métaux obtenues au labo.</p>
 
-<p>La turbidité, par exemple, corrèle souvent avec les fractions colloïdales qui transportent le cuivre et le fer. Le pH influence la solubilité des hydroxydes métalliques. Le DOC et le DO modulent la complexation et l'oxydoréduction. Sur des mois de données, une équipe peut établir qu'une hausse de turbidité de 20 NTU précède régulièrement un dépassement du seuil de Cu — mais le calcul reste manuel, mis à jour trimestriellement, et fragile dès que le procédé change.</p>
+<p>La turbidité, par exemple, corrèle souvent avec les fractions colloïdales qui transportent le cuivre et le fer. Le pH influence la solubilité des hydroxydes métalliques. Le DOC et le DO modulent la complexation et l'oxydoréduction. Sur des mois de données, une équipe peut établir qu'une hausse de turbidité de 20 NTU précède régulièrement un dépassement du seuil de Cu, mais le calcul reste manuel, mis à jour trimestriellement, et fragile dès que le procédé change.</p>
 
 <figure>
 <img src="/blog/article-regression-loupe.png" alt="Loupe sur un graphique de régression illustrant la corrélation entre variables de procédé et concentrations de métaux lourds" width="800" height="450" loading="lazy" />
-<figcaption>La régression manuelle entre turbidité, pH ou DOC et les métaux lourds est une pratique courante — mais elle peine à suivre le rythme opérationnel.</figcaption>
+<figcaption>La régression manuelle entre turbidité, pH ou DOC et les métaux lourds est une pratique courante, mais elle peine à suivre le rythme opérationnel.</figcaption>
 </figure>
 
 <h2>Variables corrélées vs métaux cibles en contexte minier</h2>
@@ -392,11 +394,11 @@ Chaque semaine sans visibilité continue, ce sont des coûts opérationnels et e
 <p>Selon les profils d'effluents visés par la Directive 019 et les pratiques courantes en Abitibi-Témiscamingue, au Nord-du-Québec et en Côte-Nord, cinq métaux reviennent systématiquement dans les plans de surveillance :</p>
 
 <ul>
-<li><strong>Cuivre (Cu)</strong> — lié aux circuits de flottation et aux résidus miniers</li>
-<li><strong>Nickel (Ni)</strong> — mines de Ni-Cu et effluents de concentration</li>
-<li><strong>Zinc (Zn)</strong> — drainage minier acide et neutralisation</li>
-<li><strong>Plomb (Pb)</strong> — traces dans certains gisements polymétalliques</li>
-<li><strong>Fer (Fe)</strong> — indicateur de précipitation et de transport colloïdal</li>
+<li><strong>Cuivre (Cu)</strong>, lié aux circuits de flottation et aux résidus miniers</li>
+<li><strong>Nickel (Ni)</strong>, mines de Ni-Cu et effluents de concentration</li>
+<li><strong>Zinc (Zn)</strong>, drainage minier acide et neutralisation</li>
+<li><strong>Plomb (Pb)</strong>, traces dans certains gisements polymétalliques</li>
+<li><strong>Fer (Fe)</strong>, indicateur de précipitation et de transport colloïdal</li>
 </ul>
 
 <p>Ces cinq éléments ne représentent pas l'intégralité des obligations réglementaires (l'arsenic ou le cadmium peuvent aussi s'appliquer selon le certificat d'autorisation), mais ils concentrent l'essentiel des efforts de corrélation terrain.</p>
@@ -406,30 +408,30 @@ Chaque semaine sans visibilité continue, ce sont des coûts opérationnels et e
 <p>AquaPure Analytics applique des <strong>modèles d'intelligence artificielle</strong> entraînés sur l'historique de <em>vos</em> capteurs et <em>vos</em> résultats de laboratoire. Plutôt que d'acheter de nouvelles sondes métalliques, la plateforme exploite le signal déjà présent dans le pH, la turbidité, le DOC, le DO et la conductivité pour estimer en continu les concentrations de Cu, Ni, Zn, Pb et Fe.</p>
 
 <ol>
-<li><strong>Calibration initiale</strong> — croisement des séries capteurs et analyses labo sur une période représentative</li>
-<li><strong>Prédiction en temps réel</strong> — estimation des concentrations métalliques à chaque pas de temps capteur</li>
-<li><strong>Alertes avant dépassement</strong> — notification lorsque la trajectoire approche un seuil réglementaire</li>
-<li><strong>Rapports auditables</strong> — traçabilité pour les inspections et les rapports au MELCCFP</li>
+<li><strong>Calibration initiale</strong>, croisement des séries capteurs et analyses labo sur une période représentative</li>
+<li><strong>Prédiction en temps réel</strong>, estimation des concentrations métalliques à chaque pas de temps capteur</li>
+<li><strong>Alertes avant dépassement</strong>, notification lorsque la trajectoire approche un seuil réglementaire</li>
+<li><strong>Rapports auditables</strong>, traçabilité pour les inspections et les rapports au MELCCFP</li>
 </ol>
 
-<p>Contrairement à une feuille Excel mise à jour tous les trimestres, le modèle se réajuste lorsque le procédé évolue — nouvelle charge, saison, modification de chaux ou de polymère — tout en conservant la logique de régression que vos équipes connaissent déjà.</p>
+<p>Contrairement à une feuille Excel mise à jour tous les trimestres, le modèle se réajuste lorsque le procédé évolue, nouvelle charge, saison, modification de chaux ou de polymère, tout en conservant la logique de régression que vos équipes connaissent déjà.</p>
 
 <h2>Moins de coûts, moins de stress lors des visites du MELCCFP</h2>
 
-<p>Chaque analyse labo accréditée pour un panel métaux coûte entre 80 $ et 250 $ par échantillon, selon la matrice et le nombre d'éléments. Multipliez par la fréquence de prélèvement sur un site — souvent plusieurs points par semaine — et le poste dépasse facilement des dizaines de milliers de dollars par année, sans compter le temps terrain.</p>
+<p>Chaque analyse labo accréditée pour un panel métaux coûte entre 80 $ et 250 $ par échantillon, selon la matrice et le nombre d'éléments. Multipliez par la fréquence de prélèvement sur un site, souvent plusieurs points par semaine, et le poste dépasse facilement des dizaines de milliers de dollars par année, sans compter le temps terrain.</p>
 
 <p>La prédiction continue ne remplace pas les analyses de référence exigées par le certificat d'autorisation. Elle permet de <strong>concentrer les prélèvements</strong> là où le modèle signale une anomalie, de réduire les campagnes « à l'aveugle » et d'arriver préparé lors d'une visite inopinée du <strong>Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs</strong> (MELCCFP).</p>
 
 <blockquote>Quand un inspecteur demande « qu'avez-vous fait entre le prélèvement du 3 et le dépassement du 12 ? », une courbe de prédiction horaire vaut mieux qu'une supposition.</blockquote>
 
-<p>Les équipes passent moins de nuits à reconstituer l'historique dans Excel et plus de temps à corriger la cause — dosage de chaux, recirculation, arrêt temporaire d'une ligne de rejet.</p>
+<p>Les équipes passent moins de nuits à reconstituer l'historique dans Excel et plus de temps à corriger la cause, dosage de chaux, recirculation, arrêt temporaire d'une ligne de rejet.</p>
 
 <p>Pour aller plus loin sur le pilotage hydrique : <a href="/blogue/eau-procede-mine-optimiser-sans-compromettre" rel="noopener noreferrer">eau de procédé en mine</a> et <a href="/blogue/station-depuration-pilotage-temps-reel" rel="noopener noreferrer">station de dépuration en temps réel</a>.</p>
 
 <h2>Questions fréquentes</h2>
 
 <h3>Les capteurs de pH et turbidité peuvent-ils vraiment prédire le cuivre ?</h3>
-<p>Oui, dans la mesure où un lien statistique stable existe entre vos paramètres de procédé et vos analyses labo. C'est exactement ce que font déjà vos ingénieurs par régression — l'IA industrialise et actualise cette logique en continu.</p>
+<p>Oui, dans la mesure où un lien statistique stable existe entre vos paramètres de procédé et vos analyses labo. C'est exactement ce que font déjà vos ingénieurs par régression, l'IA industrialise et actualise cette logique en continu.</p>
 
 <h3>La prédiction IA remplace-t-elle les analyses accréditées ?</h3>
 <p>Non. Elle complète la surveillance réglementaire en offrant une visibilité entre deux prélèvements officiels et en ciblant les campagnes labo là où le risque est le plus élevé.</p>

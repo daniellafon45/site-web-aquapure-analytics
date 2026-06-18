@@ -9,17 +9,35 @@ import { getPostBySlug, getSeedPosts, getPostById } from "@/lib/blog/store";
 import type { BlogPost } from "@/lib/blog/types";
 import { useLocale } from "@/i18n/context";
 import { PageMeta } from "@/components/site/page-meta";
-import { buildPageHead } from "@/lib/seo/site-config";
+import { articleJsonLd, buildPageHead } from "@/lib/seo/site-config";
 
 export const Route = createFileRoute("/blogue/$slug")({
   head: ({ params }) => {
     const post = getSeedPosts().find((p) => p.slug === params.slug);
-    return buildPageHead({
+    const page = buildPageHead({
       title: post ? `${post.title} — Blogue AquaPure Analytics` : "Article — Blogue AquaPure Analytics",
       description: post?.excerpt ?? "",
       path: `/blogue/${params.slug}`,
       type: "article",
     });
+    if (!post) return page;
+    return {
+      ...page,
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(
+            articleJsonLd({
+              title: post.title,
+              description: post.excerpt,
+              path: `/blogue/${params.slug}`,
+              datePublished: post.publishedAt,
+              author: post.author,
+            }),
+          ),
+        },
+      ],
+    };
   },
   component: BlogArticlePage,
 });

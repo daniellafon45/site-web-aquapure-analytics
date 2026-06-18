@@ -24,17 +24,38 @@ import etsLogo from "@/assets/partners/ets.png";
 import oseEntreprendreLogo from "@/assets/partners/ose-entreprendre.png";
 import { useLocale } from "@/i18n/context";
 import { PageMeta } from "@/components/site/page-meta";
+import { DigitalTwinFaq } from "@/components/site/digital-twin-faq";
 import { SpreadsheetHoverBackground } from "@/components/site/spreadsheet-hover-background";
 import { fr } from "@/i18n/translations/fr";
-import { buildPageHead } from "@/lib/seo/site-config";
+import { absoluteUrl, buildPageHead, faqPageJsonLd } from "@/lib/seo/site-config";
+
+const FAQ_JSON_LD = JSON.stringify(
+  faqPageJsonLd(
+    fr.digitalTwin.faq.items.map((item) => ({
+      question: item.question,
+      answerPlain: item.answerPlain,
+    })),
+    absoluteUrl("/jumeau-numerique"),
+  ),
+);
 
 export const Route = createFileRoute("/jumeau-numerique")({
-  head: () =>
-    buildPageHead({
+  head: () => {
+    const page = buildPageHead({
       title: fr.meta.digitalTwinTitle,
       description: fr.meta.digitalTwinDescription,
       path: "/jumeau-numerique",
-    }),
+    });
+    return {
+      ...page,
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: FAQ_JSON_LD,
+        },
+      ],
+    };
+  },
   component: JumeauNumeriquePage,
 });
 
@@ -256,6 +277,8 @@ function JumeauNumeriquePage() {
           </div>
         </div>
       </section>
+
+      <DigitalTwinFaq faq={t.digitalTwin.faq} />
 
       <SiteFooter />
     </SpreadsheetHoverBackground>

@@ -1,4 +1,5 @@
 import type { Translations } from "../types";
+import { digitalTwinFaqEn } from "../digital-twin-faq-content";
 
 export const en: Translations = {
   meta: {
@@ -56,16 +57,16 @@ export const en: Translations = {
     hero: {
       title: "Cut your effluent treatment costs, before the bill keeps climbing",
       subtitle:
-        "Turn your data into immediate decisions: less waste, more control, and sustainable performance — without disrupting your current operations.",
+        "Turn your data into immediate decisions: less waste, more control, and sustainable performance, without disrupting your current operations.",
       hosting: "Your data stays in Quebec, hosted on your premises.",
       contact: "See how to cut your costs",
       demo: "Request a demo",
     },
     industries: {
-      eyebrow: "Our sectors",
-      title: "Built for complex operational environments",
+      eyebrow: "Optimize your operations",
+      title: "Tailored for complex operational environments",
       description:
-        "Turn your ESG commitments into measurable operational outcomes: lower water use, reduce carbon footprint and document progress with accuracy your teams and stakeholders can defend, using real-time analytics and AI, trusted by Quebec industries.",
+        "Turn your ESG commitments into measurable gains: less water, less chemistry, less carbon, documented in real time by your digital twins.",
       scheduleMeeting: "Schedule a meeting",
       items: [
         {
@@ -97,8 +98,8 @@ export const en: Translations = {
     features: {
       title: "Features",
       ergonomic:
-        "The interface is highly ergonomic and designed to be intuitive and easy to use.",
-      body: "We deploy interoperable systems connected to your existing infrastructure and tailor each module to real needs so technology accelerates operations without complicating them.",
+        "Our interfaces are designed around your needs: ergonomic, intuitive and easy to use.",
+      body: "We deploy interoperable systems connected to your existing infrastructure and tailor each module to your actual requirements, so technology accelerates your operations without adding complexity. Here is an overview of our features, and much more.",
       learnMore: "Learn more",
       items: [
         {
@@ -123,7 +124,7 @@ export const en: Translations = {
           category: "Collaboration",
           title: "Team management",
           description:
-            "Centralize roles, field activities and operational tracking — a single source of truth for your organization.",
+            "Centralize roles, field activities and operational tracking, a single source of truth for your organization.",
         },
         {
           id: "share-project",
@@ -163,7 +164,7 @@ export const en: Translations = {
           category: "Integrations\nand automations",
           title: "SCADA connections",
           description:
-            "Connect your PLCs and industrial systems — PI, Ignition, Wonderware — without starting from scratch.",
+            "Connect your PLCs and industrial systems, PI, Ignition, Wonderware, without starting from scratch.",
         },
       ],
     },
@@ -175,7 +176,7 @@ export const en: Translations = {
     integrations: {
       title: "Compatible with your production environment",
       description:
-        "Connect to the PLCs and protocols you already use — Modbus, OPC UA, Siemens, Schneider and more — without reworking your infrastructure.",
+        "Connect to the PLCs and protocols you already use, Modbus, OPC UA, Siemens, Schneider and more, without reworking your infrastructure.",
     },
     partners: {
       title: "Backed by Quebec's innovation ecosystem",
@@ -183,7 +184,7 @@ export const en: Translations = {
         "Proven technology supported by innovation leaders to accelerate your digital transition with confidence.",
     },
     contact: {
-      title: "Let's discuss your project",
+      title: "Your AI roadmap starts here.",
       subtitle:
         "Find out how AquaPure Analytics can improve your environmental and economic performance with a tailored strategy suited to your operational reality.",
       formTitle: "Describe your need",
@@ -221,7 +222,7 @@ export const en: Translations = {
   digitalTwin: {
     title: "How does our digital twin platform work?",
     subtitle:
-      "Learn how AquaPure connects your databases and uses a self-hosted AI agent to automate industrial processes and optimize real-time control.",
+      "Our digital twins connect your sensors, SCADA and historical data to replicate your processes in real time: visualize current state, anticipate drift and automate control of your PLCs. Recommendations rely on what our mathematical models process, and your teams can trace and defend, not opaque black-box AI.",
     diagram: {
       selfHostedDb: "AquaPure self-hosted database",
       yourDatabase: "Your own database",
@@ -238,7 +239,7 @@ export const en: Translations = {
     },
     whyTitle: "Why AquaPure?",
     whySubtitle:
-      "Automate industrial control, reduce energy consumption and make decisions based on reliable data — without compromising security or data sovereignty.",
+      "Building a Quebec capable of mastering its industrial transformation: that's our mission. Optimize processes, preserve equipment, close the loop on water and energy, with decisions based on reliable data hosted locally and defensible by your teams.",
     whyFeatures: [
       {
         title: "AI-driven process optimization",
@@ -272,12 +273,13 @@ export const en: Translations = {
     municipal: "For municipalities",
     industry: "For industry",
     contactUs: "Contact us",
+    faq: digitalTwinFaqEn,
   },
   blog: {
     eyebrow: "Blog",
     title: "The AquaPure blog",
     subtitle:
-      "News, analysis and practical experience on water management in municipal and industrial settings — without unnecessary jargon.",
+      "News, analysis and practical experience on water management in municipal and industrial settings, without unnecessary jargon.",
     noImage: "No image",
     readArticle: "Read article",
     minRead: "min",
@@ -314,25 +316,25 @@ export const en: Translations = {
       slug: "process-water-mining-optimize-without-compromising-compliance",
       title: "Process water in mining: optimize without compromising compliance",
       excerpt:
-        "Reuse, recycle, reduce — pressure comes from both sides. Without continuous visibility, every adjustment feels like a gamble teams are reluctant to take.",
+        "Reuse, recycle, reduce, pressure comes from both sides. Without continuous visibility, every adjustment feels like a gamble teams are reluctant to take.",
       category: "Mine",
       author: "AquaPure Team",
       content: `In mining operations, every cubic meter of water carries a double weight: the cost of supply on one hand, and regulatory obligations for discharges on the other. Teams are squeezed between production demands and heightened oversight of water impacts.
 
-Without continuous visibility into quality and volumes, any optimization feels like a wager. Flow is reduced in one place and a compliance deviation appears elsewhere. Caution prevails, and water continues to be used — day after day — a little more than necessary.
+Without continuous visibility into quality and volumes, any optimization feels like a wager. Flow is reduced in one place and a compliance deviation appears elsewhere. Caution prevails, and water continues to be used, day after day, a little more than necessary.
 
 Manual readings and monthly reports arrive too late. By the time deviations show up in a spreadsheet, thousands of cubic meters may already have been processed or discharged under suboptimal conditions. Engineers then spend hours reconstructing history instead of fixing root causes.
 
 Predictive models tied to your field sensors let you anticipate drifts before they become incidents. You can optimize recycling loops with confidence, backed by traceability auditors can follow line by line.
 
-The issue isn't choosing productivity over the environment. It's stopping the practice of managing one without the other — and ending the hidden cost of waiting.`,
+The issue isn't choosing productivity over the environment. It's stopping the practice of managing one without the other, and ending the hidden cost of waiting.`,
     },
     {
       id: "seed-municipal",
       slug: "wastewater-plant-real-time-control",
       title: "Wastewater plant: regain control when every minute counts",
       excerpt:
-        "Flows, sludge, discharge quality — a municipal plant generates thousands of data points per day. The problem is not the lack of information, it’s the delay to act.",
+        "Flows, sludge, discharge quality, a municipal plant generates thousands of data points per day. The problem is not the lack of information, it’s the delay to act.",
       category: "Eaux municipales",
       author: "AquaPure Team",
       content: `At a wastewater treatment plant, the margin for error is thin. An imbalance in aeration, a rise in turbidity, or a drifting pump: the consequences are measured in discharge quality, wasted energy and overtime for the shift crew.
@@ -341,19 +343,19 @@ Yet most decisions still rely on snapshots, field readings, delayed SCADA export
 
 This lag creates a silent problem: operators sense an anomaly coming but lack the tools to quantify and escalate it before it becomes an incident. The result: reactive interventions, energy overconsumption and difficult explanations to the municipal board.
 
-Real-time supervision correlated to your actual processes changes team posture. Alerts become actionable, trends visible and ESG reports documented automatically — without reconstructing history by hand each quarter.
+Real-time supervision correlated to your actual processes changes team posture. Alerts become actionable, trends visible and ESG reports documented automatically, without reconstructing history by hand each quarter.
 
 Every week without continuous visibility accrues operational and environmental costs that don’t appear in your dashboards. The question is no longer whether you need more sensors; it’s how to turn what you already measure into immediate decisions.`,
     },
     {
       id: "seed-heavy-metals",
       slug: "heavy-metals-ai-sensor-prediction-mining",
-      title: "Heavy metals in mining: why your sensors fall short — and how AI closes the gap",
+      title: "Heavy metals in mining: why your sensors fall short, and how AI closes the gap",
       excerpt:
-        "Copper, nickel, zinc: lab results arrive too late. Site managers correlate turbidity and pH by regression — AquaPure automates that logic with AI and your existing sensors.",
+        "Copper, nickel, zinc: lab results arrive too late. Site managers correlate turbidity and pH by regression, AquaPure automates that logic with AI and your existing sensors.",
       category: "Mine",
       author: "AquaPure Team",
-      content: `<p><strong>Heavy metals in mine effluent</strong> are trace elements (copper, nickel, zinc, lead, iron) whose discharge limits are tightly regulated in Quebec, notably under <a href="https://www.environnement.gouv.qc.ca/mines/effluents/directive019.htm" rel="noopener noreferrer" target="_blank">Directive 019</a>. The challenge is not whether to measure them — it is seeing concentrations <em>in time</em> to act.</p>
+      content: `<p><strong>Heavy metals in mine effluent</strong> are trace elements (copper, nickel, zinc, lead, iron) whose discharge limits are tightly regulated in Quebec, notably under <a href="https://www.environnement.gouv.qc.ca/mines/effluents/directive019.htm" rel="noopener noreferrer" target="_blank">Directive 019</a>. The challenge is not whether to measure them, it is seeing concentrations <em>in time</em> to act.</p>
 
 <h2>Why heavy-metal monitoring remains a blind spot</h2>
 
@@ -367,7 +369,7 @@ Every week without continuous visibility accrues operational and environmental c
 
 <figure>
 <img src="/blog/article-regression-loupe.png" alt="Magnifying glass over a regression chart showing correlation between process variables and heavy metal concentrations" width="800" height="450" loading="lazy" />
-<figcaption>Manual regression between turbidity, pH, or DOC and heavy metals is common — but it struggles to keep pace with operations.</figcaption>
+<figcaption>Manual regression between turbidity, pH, or DOC and heavy metals is common, but it struggles to keep pace with operations.</figcaption>
 </figure>
 
 <h2>Correlated variables vs target metals in mining</h2>
@@ -386,11 +388,11 @@ Every week without continuous visibility accrues operational and environmental c
 <h2>Five priority metals for Quebec mining</h2>
 
 <ul>
-<li><strong>Copper (Cu)</strong> — flotation circuits and tailings</li>
-<li><strong>Nickel (Ni)</strong> — Ni-Cu mines and concentration effluent</li>
-<li><strong>Zinc (Zn)</strong> — acid mine drainage and neutralization</li>
-<li><strong>Lead (Pb)</strong> — polymetallic deposits</li>
-<li><strong>Iron (Fe)</strong> — precipitation and colloidal transport indicator</li>
+<li><strong>Copper (Cu)</strong>, flotation circuits and tailings</li>
+<li><strong>Nickel (Ni)</strong>, Ni-Cu mines and concentration effluent</li>
+<li><strong>Zinc (Zn)</strong>, acid mine drainage and neutralization</li>
+<li><strong>Lead (Pb)</strong>, polymetallic deposits</li>
+<li><strong>Iron (Fe)</strong>, precipitation and colloidal transport indicator</li>
 </ul>
 
 <h2>How AquaPure turns your sensors into metal predictors</h2>
@@ -398,15 +400,15 @@ Every week without continuous visibility accrues operational and environmental c
 <p>AquaPure Analytics applies <strong>AI models</strong> trained on <em>your</em> sensor history and <em>your</em> lab results. Instead of buying new metal probes, the platform uses pH, turbidity, DOC, DO, and conductivity to estimate Cu, Ni, Zn, Pb, and Fe continuously.</p>
 
 <ol>
-<li><strong>Initial calibration</strong> — cross sensor series with lab analyses over a representative period</li>
-<li><strong>Real-time prediction</strong> — estimated metal concentrations at each sensor timestep</li>
-<li><strong>Pre-threshold alerts</strong> — notification when trajectories approach regulatory limits</li>
-<li><strong>Auditable reports</strong> — traceability for inspections and MELCCFP reporting</li>
+<li><strong>Initial calibration</strong>, cross sensor series with lab analyses over a representative period</li>
+<li><strong>Real-time prediction</strong>, estimated metal concentrations at each sensor timestep</li>
+<li><strong>Pre-threshold alerts</strong>, notification when trajectories approach regulatory limits</li>
+<li><strong>Auditable reports</strong>, traceability for inspections and MELCCFP reporting</li>
 </ol>
 
 <h2>Lower costs, less stress during MELCCFP inspections</h2>
 
-<p>Accredited multi-metal lab analyses often cost CAD 80–250 per sample. Multiply by weekly sampling across multiple points and the line item quickly reaches tens of thousands per year — before field time.</p>
+<p>Accredited multi-metal lab analyses often cost CAD 80–250 per sample. Multiply by weekly sampling across multiple points and the line item quickly reaches tens of thousands per year, before field time.</p>
 
 <p>Continuous prediction does not replace required reference analyses. It <strong>focuses sampling</strong> where the model flags risk and helps teams answer when Quebec's environment ministry asks what happened between two official samples.</p>
 
@@ -415,7 +417,7 @@ Every week without continuous visibility accrues operational and environmental c
 <h2>Frequently asked questions</h2>
 
 <h3>Can pH and turbidity sensors really predict copper?</h3>
-<p>Yes, when a stable statistical link exists between process parameters and lab results — the same logic your engineers already use in regression, industrialized and updated continuously by AI.</p>
+<p>Yes, when a stable statistical link exists between process parameters and lab results, the same logic your engineers already use in regression, industrialized and updated continuously by AI.</p>
 
 <h3>Does AI prediction replace accredited lab analysis?</h3>
 <p>No. It complements regulatory monitoring with visibility between official samples and targeted lab campaigns.</p>

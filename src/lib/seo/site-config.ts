@@ -37,8 +37,23 @@ export function organizationJsonLd() {
         url: SITE_URL,
         logo: absoluteUrl("/apple-touch-icon.png"),
         email: "contact@aquapure-analytics.com",
+        contactPoint: {
+          "@type": "ContactPoint",
+          contactType: "sales",
+          email: "contact@aquapure-analytics.com",
+          areaServed: "CA-QC",
+          availableLanguage: ["French", "English"],
+        },
         sameAs: [LINKEDIN_URL],
         description: DEFAULT_DESCRIPTION,
+        knowsAbout: [
+          "jumeau numérique traitement des eaux",
+          "SCADA",
+          "capteurs virtuels",
+          "Directive 019",
+          "métaux lourds mine",
+          "station d'épuration",
+        ],
         areaServed: {
           "@type": "AdministrativeArea",
           name: "Quebec, Canada",
@@ -62,6 +77,57 @@ type PageHeadInput = {
   path?: string;
   type?: "website" | "article";
 };
+
+type ArticleJsonLdInput = {
+  title: string;
+  description: string;
+  path: string;
+  datePublished: string;
+  author?: string;
+};
+
+export function articleJsonLd({
+  title,
+  description,
+  path,
+  datePublished,
+  author = SITE_NAME,
+}: ArticleJsonLdInput) {
+  const url = absoluteUrl(path);
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    datePublished,
+    dateModified: datePublished,
+    author: {
+      "@type": "Organization",
+      name: author,
+      url: SITE_URL,
+    },
+    publisher: { "@id": `${SITE_URL}/#organization` },
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    url,
+    inLanguage: "fr-CA",
+  };
+}
+
+export function faqPageJsonLd(items: { question: string; answerPlain: string }[], pageUrl: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answerPlain,
+      },
+    })),
+    url: pageUrl,
+  };
+}
 
 export function buildPageHead({
   title,

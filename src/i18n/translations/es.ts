@@ -1,4 +1,5 @@
 import type { Translations } from "../types";
+import { digitalTwinFaqEs } from "../digital-twin-faq-content";
 
 export const es: Translations = {
   meta: {
@@ -62,10 +63,10 @@ export const es: Translations = {
       demo: "Solicitar demo",
     },
     industries: {
-      eyebrow: "Nuestros sectores",
-      title: "Diseñado para entornos operativos complejos",
+      eyebrow: "Optimizar sus operaciones",
+      title: "Diseñado a medida para entornos operativos complejos",
       description:
-        "Convierte tus compromisos ESG en resultados operativos concretos: reduce el consumo de agua, limita tu huella de carbono y documenta el progreso con la precisión que tus equipos y partes interesadas puedan defender, con análisis en tiempo real e IA, en el corazón de las industrias de Quebec.",
+        "Convierta sus compromisos ESG en ganancias medibles: menos agua, menos química, menos carbono, documentados en tiempo real por sus gemelos digitales.",
       scheduleMeeting: "Agendar una reunión",
       items: [
         {
@@ -97,8 +98,8 @@ export const es: Translations = {
     features: {
       title: "Funciones",
       ergonomic:
-        "La interfaz es muy ergonómica y está diseñada para ser intuitiva y fácil de usar.",
-      body: "Desplegamos sistemas interoperables conectados a tu infraestructura actual y adaptamos cada módulo a tus necesidades reales, para que la tecnología acelere tus operaciones sin complicarlas.",
+        "Nuestras interfaces están diseñadas según sus necesidades: ergonómicas, intuitivas y fáciles de usar.",
+      body: "Desplegamos sistemas interoperables conectados a su infraestructura existente y adaptamos cada módulo a sus usos reales, para que la tecnología acelere sus operaciones sin complicarlas. Aquí tiene un resumen de nuestras funciones, y mucho más.",
       learnMore: "Saber más",
       items: [
         {
@@ -163,7 +164,7 @@ export const es: Translations = {
           category: "Integraciones\ny automatizaciones",
           title: "Conexiones SCADA",
           description:
-            "Conecta tus PLCs y sistemas industriales — PI, Ignition, Wonderware — sin empezar desde cero.",
+            "Conecta tus PLCs y sistemas industriales, PI, Ignition, Wonderware, sin empezar desde cero.",
         },
       ],
     },
@@ -175,7 +176,7 @@ export const es: Translations = {
     integrations: {
       title: "Compatible con tu entorno de producción",
       description:
-        "Conéctate a los PLCs y protocolos que ya usas — Modbus, OPC UA, Siemens, Schneider y más — sin rehacer tu infraestructura.",
+        "Conéctate a los PLCs y protocolos que ya usas, Modbus, OPC UA, Siemens, Schneider y más, sin rehacer tu infraestructura.",
     },
     partners: {
       title: "Respaldado por el ecosistema de innovación de Quebec",
@@ -183,7 +184,7 @@ export const es: Translations = {
         "Tecnología probada impulsada por líderes de innovación para acelerar tu transición digital con confianza.",
     },
     contact: {
-      title: "Hablemos de tu proyecto",
+      title: "Su hoja de ruta de IA comienza aquí.",
       subtitle:
         "Descubre cómo AquaPure Analytics puede mejorar tu desempeño ambiental y económico con una estrategia a medida, adaptada a tu realidad operativa.",
       formTitle: "Describe tu necesidad",
@@ -221,7 +222,7 @@ export const es: Translations = {
   digitalTwin: {
     title: "¿Cómo funciona nuestra plataforma de gemelo digital?",
     subtitle:
-      "Descubre cómo AquaPure conecta tus bases de datos y usa un agente de IA autoalojado para automatizar procesos industriales y optimizar el control en tiempo real.",
+      "Nuestros gemelos digitales conectan sus sensores, SCADA e historiales para reproducir sus procesos en tiempo real: visualice el estado actual, anticipe desviaciones y automatice el control de sus autómatas. Las recomendaciones se basan en lo que nuestros modelos matemáticos tratan, y que sus equipos pueden seguir y defender, no en una IA de caja negra.",
     diagram: {
       selfHostedDb: "Base de datos AquaPure autoalojada",
       yourDatabase: "Tu propia base de datos",
@@ -238,7 +239,7 @@ export const es: Translations = {
     },
     whyTitle: "¿Por qué AquaPure?",
     whySubtitle:
-      "Automatiza el control industrial, reduce el consumo energético y toma decisiones basadas en datos fiables, sin comprometer la seguridad ni la soberanía de tus datos.",
+      "Construir un Québec capaz de dominar su transformación industrial: esa es nuestra misión. Optimizar los procesos, preservar los equipos, cerrar el ciclo del agua y la energía, con decisiones basadas en datos fiables, alojados localmente y defendibles por sus equipos.",
     whyFeatures: [
       {
         title: "Optimización de procesos con IA",
@@ -272,6 +273,7 @@ export const es: Translations = {
     municipal: "Para municipios",
     industry: "Para la industria",
     contactUs: "Contáctanos",
+    faq: digitalTwinFaqEs,
   },
   blog: {
     eyebrow: "Blog",
@@ -348,16 +350,16 @@ Cada semana sin visibilidad continua acumula costos operativos y ambientales que
     {
       id: "seed-heavy-metals",
       slug: "metales-pesados-prediccion-ia-sensores-mineria",
-      title: "Metales pesados en minería: por qué los sensores actuales no bastan — y cómo la IA cierra la brecha",
+      title: "Metales pesados en minería: por qué los sensores actuales no bastan, y cómo la IA cierra la brecha",
       excerpt:
-        "Cobre, níquel, zinc: los resultados de laboratorio llegan tarde. Los gestores correlacionan turbidez y pH por regresión — AquaPure automatiza esa lógica con IA y sus sensores existentes.",
+        "Cobre, níquel, zinc: los resultados de laboratorio llegan tarde. Los gestores correlacionan turbidez y pH por regresión, AquaPure automatiza esa lógica con IA y sus sensores existentes.",
       category: "Mine",
       author: "Equipo AquaPure",
       content: `<p><strong>Los metales pesados en efluentes mineros</strong> (cobre, níquel, zinc, plomo, hierro) están estrictamente regulados en Quebec, en particular bajo la <a href="https://www.environnement.gouv.qc.ca/mines/effluents/directive019.htm" rel="noopener noreferrer" target="_blank">Directiva 019</a>. El reto no es medirlos, sino verlos <em>a tiempo</em> para actuar.</p>
 
 <h2>Por qué el seguimiento en tiempo real falla</h2>
 
-<p>La mayoría de los sitios ya tienen sensores continuos: pH, turbidez, conductividad (EC), oxígeno disuelto (DO), carbono orgánico disuelto (DOC/DQO). Miden bien el proceso, pero no el cobre, el níquel ni el zinc directamente. La referencia sigue siendo el <strong>muestreo manual</strong> y el laboratorio acreditado — con 3 a 10 días de retraso.</p>
+<p>La mayoría de los sitios ya tienen sensores continuos: pH, turbidez, conductividad (EC), oxígeno disuelto (DO), carbono orgánico disuelto (DOC/DQO). Miden bien el proceso, pero no el cobre, el níquel ni el zinc directamente. La referencia sigue siendo el <strong>muestreo manual</strong> y el laboratorio acreditado, con 3 a 10 días de retraso.</p>
 
 <h2>Regresión y correlaciones: la práctica habitual</h2>
 
@@ -371,16 +373,16 @@ Cada semana sin visibilidad continua acumula costos operativos y ambientales que
 <h2>Cinco metales prioritarios</h2>
 
 <ul>
-<li><strong>Cobre (Cu)</strong> — flotación y relaves</li>
-<li><strong>Níquel (Ni)</strong> — minas Ni-Cu</li>
-<li><strong>Zinc (Zn)</strong> — drenaje ácido y neutralización</li>
-<li><strong>Plomo (Pb)</strong> — yacimientos polimetálicos</li>
-<li><strong>Hierro (Fe)</strong> — precipitación y transporte coloidal</li>
+<li><strong>Cobre (Cu)</strong>, flotación y relaves</li>
+<li><strong>Níquel (Ni)</strong>, minas Ni-Cu</li>
+<li><strong>Zinc (Zn)</strong>, drenaje ácido y neutralización</li>
+<li><strong>Plomo (Pb)</strong>, yacimientos polimetálicos</li>
+<li><strong>Hierro (Fe)</strong>, precipitación y transporte coloidal</li>
 </ul>
 
 <h2>Cómo AquaPure predice metales con IA</h2>
 
-<p>AquaPure entrena modelos de <strong>inteligencia artificial</strong> con el historial de sus sensores y análisis de laboratorio para estimar Cu, Ni, Zn, Pb y Fe en continuo — sin nuevas sondas metálicas.</p>
+<p>AquaPure entrena modelos de <strong>inteligencia artificial</strong> con el historial de sus sensores y análisis de laboratorio para estimar Cu, Ni, Zn, Pb y Fe en continuo, sin nuevas sondas metálicas.</p>
 
 <h2>Menos costos y menos estrés en inspecciones</h2>
 

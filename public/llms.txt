@@ -1,6 +1,6 @@
 # AquaPure Analytics
 
-> Plateforme québécoise de gestion des eaux municipales et des effluents miniers et industriels par la donnée, l'IA et le jumeau numérique.
+> Plateforme québécoise de gestion des eaux municipales et des effluents miniers et industriels par la donnée, l'IA et le jumeau numérique. Données auto-hébergées au Québec.
 
 ## Site officiel
 
@@ -10,16 +10,23 @@
 
 - Accueil : https://aquapure-analytics.com/
 - Jumeau numérique : https://aquapure-analytics.com/jumeau-numerique
+- FAQ jumeau numérique (10 Q/R) : https://aquapure-analytics.com/jumeau-numerique#digital-twin-faq-title
 - Blogue : https://aquapure-analytics.com/blogue
+- Eau de procédé en mine : https://aquapure-analytics.com/blogue/eau-procede-mine-optimiser-sans-compromettre
+- Station de dépuration temps réel : https://aquapure-analytics.com/blogue/station-depuration-pilotage-temps-reel
 - Métaux lourds en mine (IA + capteurs) : https://aquapure-analytics.com/blogue/metaux-lourds-prediction-ia-capteurs-mine
 - Politique de confidentialité : https://aquapure-analytics.com/confidentialite
 
 ## Secteurs
 
-- Eaux municipales (traitement, coûts chimiques et énergie)
-- Mine (conformité Directive 019, métaux lourds)
+- Eaux municipales (STEP, aération, coûts chimiques et énergie)
+- Mine (conformité Directive 019, métaux lourds, capteurs virtuels)
 - Pâte et papier (eaux de procédé, biodigestion)
 - Agroalimentaire (qualité et conformité de l'eau)
+
+## Mots-clés
+
+jumeau numérique, traitement des eaux, SCADA, capteur virtuel, Directive 019, métaux lourds, station d'épuration, souveraineté des données Québec
 
 ## Contact
 

@@ -49,6 +49,22 @@ export type WhyFeature = {
   desc: string;
 };
 
+export type FaqAnswerSegment =
+  | { type: "text"; value: string }
+  | { type: "link"; label: string; href: string; external?: boolean };
+
+export type DigitalTwinFaqItem = {
+  question: string;
+  answerPlain: string;
+  segments: FaqAnswerSegment[];
+};
+
+export type DigitalTwinFaqContent = {
+  title: string;
+  subtitle: string;
+  items: DigitalTwinFaqItem[];
+};
+
 export type SeedPostTranslation = {
   id: string;
   slug: string;
@@ -196,6 +212,7 @@ export type Translations = {
     municipal: string;
     industry: string;
     contactUs: string;
+    faq: DigitalTwinFaqContent;
   };
   blog: {
     eyebrow: string;

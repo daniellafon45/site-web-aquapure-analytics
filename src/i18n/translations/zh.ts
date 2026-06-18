@@ -1,4 +1,5 @@
 import type { Translations } from "../types";
+import { digitalTwinFaqZh } from "../digital-twin-faq-content";
 
 export const zh: Translations = {
   meta: {
@@ -56,16 +57,16 @@ export const zh: Translations = {
     hero: {
       title: "降低废水处理成本，在账单不断攀升之前",
       subtitle:
-        "将数据转化为即时决策：减少浪费、提升控制力、实现可持续绩效 — 无需扰乱现有运营。",
+        "将数据转化为即时决策：减少浪费、提升控制力、实现可持续绩效, 无需扰乱现有运营。",
       hosting: "您的数据留在魁北克，托管在本地。",
       contact: "了解如何降低成本",
       demo: "申请演示",
     },
     industries: {
-      eyebrow: "我们的行业",
-      title: "为复杂的运营环境而设计",
+      eyebrow: "优化您的运营",
+      title: "为复杂运营环境量身定制",
       description:
-        "将您的 ESG 承诺转化为可衡量的运营成果：降低用水、减少碳足迹并以可被团队与利益相关者证明的精确度记录进展，采用实时分析与 AI，受魁北克行业信赖。",
+        "将您的 ESG 承诺转化为可衡量的收益：更少用水、更少药剂、更低碳排，由您的数字孪生实时记录。",
       scheduleMeeting: "安排会议",
       items: [
         {
@@ -97,8 +98,8 @@ export const zh: Translations = {
     features: {
       title: "功能",
       ergonomic:
-        "界面高度符合人体工学，设计直观且易于使用。",
-      body: "我们部署与您现有基础设施互操作的系统，并将每个模块根据实际需求定制，使技术加速运营而非增加复杂性。",
+        "我们的界面根据您的需求设计：符合人体工学、直观且易于使用。",
+      body: "我们部署与您现有基础设施互操作的系统，并根据实际使用场景定制每个模块，使技术加速运营而不增加复杂性。以下是我们的部分功能概览，还有更多。",
       learnMore: "了解更多",
       items: [
         {
@@ -175,7 +176,7 @@ export const zh: Translations = {
     integrations: {
       title: "兼容您的生产环境",
       description:
-        "连接您当前使用的 PLC 与协议 — Modbus、OPC UA、Siemens、Schneider 等 — 无需重构基础设施。",
+        "连接您当前使用的 PLC 与协议, Modbus、OPC UA、Siemens、Schneider 等, 无需重构基础设施。",
     },
     partners: {
       title: "得到魁北克创新生态系统的支持",
@@ -183,7 +184,7 @@ export const zh: Translations = {
         "由值得信赖的创新领导者支持的成熟技术，加速您的数字化转型并增强信心。",
     },
     contact: {
-      title: "让我们讨论您的项目",
+      title: "您的 AI 路线图从这里开始。",
       subtitle:
         "了解 AquaPure Analytics 如何通过量身定制的策略提升您的环境与经济绩效，适配您的运营现实。",
       formTitle: "描述您的需求",
@@ -221,7 +222,7 @@ export const zh: Translations = {
   digitalTwin: {
     title: "我们的数字孪生平台如何工作？",
     subtitle:
-      "了解 AquaPure 如何连接您的数据库并利用自托管 AI 代理自动化工业流程并优化实时控制。",
+      "我们的数字孪生连接您的传感器、SCADA 与历史数据，实时复现您的工艺流程：可视化当前状态、预判偏差并自动化控制您的 PLC。每项建议均基于我们数学模型所处理的内容，且您的团队可逐步追溯与论证，而非无法审计的黑盒 AI。",
     diagram: {
       selfHostedDb: "AquaPure 自托管数据库",
       yourDatabase: "您自己的数据库",
@@ -238,7 +239,7 @@ export const zh: Translations = {
     },
     whyTitle: "为什么选择 AquaPure？",
     whySubtitle:
-      "自动化工业控制，降低能耗，基于可靠数据做出决策，同时不牺牲安全性或数据主权。",
+      "建设一个能够掌握工业转型的魁北克：这是我们的使命。优化工艺流程、保护设备、实现水与能源的循环利用，以本地托管、团队可辩护的可靠数据为基础做出决策。",
     whyFeatures: [
       {
         title: "基于 AI 的流程优化",
@@ -272,12 +273,13 @@ export const zh: Translations = {
     municipal: "面向市政",
     industry: "面向工业",
     contactUs: "联系我们",
+    faq: digitalTwinFaqZh,
   },
   blog: {
     eyebrow: "博客",
     title: "AquaPure 博客",
     subtitle:
-      "关于市政与工业环境中水务管理的新闻、分析与实战分享 — 无需不必要的术语。",
+      "关于市政与工业环境中水务管理的新闻、分析与实战分享, 无需不必要的术语。",
     noImage: "无图像",
     readArticle: "阅读全文",
     minRead: "分",
@@ -314,7 +316,7 @@ export const zh: Translations = {
       slug: "kuangshan-guocheng-shui-youhua",
       title: "采矿过程用水：在不妥协合规性的前提下优化",
       excerpt:
-        "重复利用、循环、减少——来自各方的压力真实存在。在没有持续可视性的情况下，每一次调整都像是一场团队不愿冒的赌博。",
+        "重复利用、循环、减少，来自各方的压力真实存在。在没有持续可视性的情况下，每一次调整都像是一场团队不愿冒的赌博。",
       category: "Mine",
       author: "AquaPure 团队",
       content: `在采矿环境中，每立方米水都承担着双重意义：一方面是供应成本，另一方面是关于排放的监管义务。团队被生产需求与日益严格的水环境监管夹在中间。
@@ -332,7 +334,7 @@ export const zh: Translations = {
       slug: "wushui-chuli-zhan-shishi-kongzhi",
       title: "污水处理厂：在每一分钟都重要时重新掌控",
       excerpt:
-        "流量、污泥、排放质量——市政厂每天产生数千个数据点。问题不在于信息不足，而在于采取行动的延迟。",
+        "流量、污泥、排放质量，市政厂每天产生数千个数据点。问题不在于信息不足，而在于采取行动的延迟。",
       category: "Eaux municipales",
       author: "AquaPure 团队",
       content: `在污水处理厂中，容差极小。曝气失衡、浊度上升、泵出现漂移：后果体现在排放质量、能耗浪费与班组的加班。
@@ -341,16 +343,16 @@ export const zh: Translations = {
 
 这种滞后产生了一个隐性问题：操作员能够感知异常正在形成，但缺乏量化并上报的工具，导致问题变成事故后才被发现。结果是被动应对、能源过度消耗以及向市政委员会做出困难的说明。
 
-与真实流程相关联的实时监督可以改变团队的工作方式。告警变得可操作、趋势清晰、ESG 报告自动记录——无需每季度手工重建历史。
+与真实流程相关联的实时监督可以改变团队的工作方式。告警变得可操作、趋势清晰、ESG 报告自动记录，无需每季度手工重建历史。
 
 每周缺乏持续可视性，都会累积出在仪表盘上看不见的运营与环境成本。问题不再是是否需要更多传感器，而是如何把已有测量转化为即时决策。`,
     },
     {
       id: "seed-heavy-metals",
       slug: "zhongjinshu-ai-chuanganqi-yuce-kuangshan",
-      title: "矿山重金属：现有传感器为何不够——AI 如何弥补监测空白",
+      title: "矿山重金属：现有传感器为何不够，AI 如何弥补监测空白",
       excerpt:
-        "铜、镍、锌：实验室结果往往滞后。现场管理者用浊度、pH 等做回归相关——AquaPure 用 AI 与现有传感器将这一逻辑自动化。",
+        "铜、镍、锌：实验室结果往往滞后。现场管理者用浊度、pH 等做回归相关，AquaPure 用 AI 与现有传感器将这一逻辑自动化。",
       category: "Mine",
       author: "AquaPure 团队",
       content: `<p><strong>矿山废水中的重金属</strong>（铜、镍、锌、铅、铁）在魁北克受严格监管，尤其是<a href="https://www.environnement.gouv.qc.ca/mines/effluents/directive019.htm" rel="noopener noreferrer" target="_blank">第 019 号指令</a>。难点不在于要不要测，而在于能否<em>及时</em>掌握浓度并采取行动。</p>
@@ -371,11 +373,11 @@ export const zh: Translations = {
 <h2>魁北克矿山五种优先金属</h2>
 
 <ul>
-<li><strong>铜（Cu）</strong> — 浮选与尾矿</li>
-<li><strong>镍（Ni）</strong> — 镍铜矿与选矿废水</li>
-<li><strong>锌（Zn）</strong> — 酸性矿山排水与中和</li>
-<li><strong>铅（Pb）</strong> — 多金属矿床</li>
-<li><strong>铁（Fe）</strong> — 沉淀与胶体运移指标</li>
+<li><strong>铜（Cu）</strong>, 浮选与尾矿</li>
+<li><strong>镍（Ni）</strong>, 镍铜矿与选矿废水</li>
+<li><strong>锌（Zn）</strong>, 酸性矿山排水与中和</li>
+<li><strong>铅（Pb）</strong>, 多金属矿床</li>
+<li><strong>铁（Fe）</strong>, 沉淀与胶体运移指标</li>
 </ul>
 
 <h2>AquaPure 如何用 AI 预测金属浓度</h2>

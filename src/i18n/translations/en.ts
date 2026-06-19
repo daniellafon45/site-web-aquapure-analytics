@@ -184,7 +184,7 @@ export const en: Translations = {
         "Proven technology supported by innovation leaders to accelerate your digital transition with confidence.",
     },
     contact: {
-      title: "Your AI roadmap starts here.",
+      title: "Your AI roadmap starts here",
       subtitle:
         "Find out how AquaPure Analytics can improve your environmental and economic performance with a tailored strategy suited to your operational reality.",
       formTitle: "Describe your need",

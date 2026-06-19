@@ -184,7 +184,7 @@ export const es: Translations = {
         "Tecnología probada impulsada por líderes de innovación para acelerar tu transición digital con confianza.",
     },
     contact: {
-      title: "Su hoja de ruta de IA comienza aquí.",
+      title: "Su hoja de ruta de IA comienza aquí",
       subtitle:
         "Descubre cómo AquaPure Analytics puede mejorar tu desempeño ambiental y económico con una estrategia a medida, adaptada a tu realidad operativa.",
       formTitle: "Describe tu necesidad",

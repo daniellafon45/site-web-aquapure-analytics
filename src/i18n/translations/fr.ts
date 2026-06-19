@@ -184,7 +184,7 @@ export const fr: Translations = {
         "Une technologie éprouvée, portée par les leaders de l'innovation québécoise, pour accélérer votre transition numérique en toute confiance.",
     },
     contact: {
-      title: "Votre feuille de route IA commence ici.",
+      title: "Votre feuille de route IA commence ici",
       subtitle:
         "Découvrez comment Aquapure Analytics peut améliorer votre performance environnementale et économique, avec une stratégie sur mesure, adaptée à votre réalité opérationnelle.",
       formTitle: "Décrivez votre besoin",

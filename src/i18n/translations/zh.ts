@@ -184,7 +184,7 @@ export const zh: Translations = {
         "由值得信赖的创新领导者支持的成熟技术，加速您的数字化转型并增强信心。",
     },
     contact: {
-      title: "您的 AI 路线图从这里开始。",
+      title: "您的 AI 路线图从这里开始",
       subtitle:
         "了解 AquaPure Analytics 如何通过量身定制的策略提升您的环境与经济绩效，适配您的运营现实。",
       formTitle: "描述您的需求",
